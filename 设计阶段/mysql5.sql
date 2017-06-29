@@ -73,8 +73,8 @@ create table manager
 (
    rid                  int not null auto_increment,
    r_name               varchar(20) not null,
-   r_handler            varchar(10) not null,
-   r_password           varchar(10) not null,
+   r_handler            varchar(20) not null,
+   r_password           varchar(20) not null,
    primary key (rid)
 );
 
@@ -85,10 +85,10 @@ create table master
 (
    Mid                  int not null auto_increment,
    m_name               varchar(20) not null,
-   m_sex                varchar(4) not null,
+   m_sex                varchar(8) not null,
    m_birth              date not null,
-   m_handle             varchar(10) not null,
-   m_password           varchar(10) not null,
+   m_handle             varchar(20) not null,
+   m_password           varchar(20) not null,
    m_Flag               bool not null default false,
    m_num                bigint not null,
    primary key (Mid, m_num)
@@ -101,10 +101,10 @@ create table student
 (
    sid                  int not null auto_increment,
    s_name               varchar(20) not null,
-   s_sex                varchar(4) not null,
+   s_sex                varchar(8) not null,
    s_birth              date not null,
-   s_handle             varchar(10) not null,
-   s_password           varchar(10) not null,
+   s_handle             varchar(20) not null,
+   s_password           varchar(20) not null,
    s_Flag               bool not null default false,
    s_num                bigint not null,
    primary key (sid, s_num)
@@ -129,12 +129,12 @@ create table teacher
 (
    tid                  int not null auto_increment,
    t_name               varchar(20) not null,
-   t_sex                varchar(4) not null,
+   t_sex                varchar(8) not null,
    t_birth              date not null,
    t_num                bigint not null,
-   t_handle             varchar(10) not null,
-   t_password           varchar(10) not null,
-   t_Flag               bool not null default flase,
+   t_handle             varchar(20) not null,
+   t_password           varchar(20) not null,
+   t_Flag               bool not null default false,
    primary key (tid, t_num)
 );
 

@@ -3,7 +3,7 @@
 /* Created on:     2017/6/29 17:31:12                           */
 /*==============================================================*/
 
-
+/*
 drop index managergroup_FK on ClassGroup;
 
 drop table if exists ClassGroup;
@@ -38,14 +38,14 @@ drop index teacherjoingroup2_FK on teacherjoingroup;
 
 drop index teacherjoingroup_FK on teacherjoingroup;
 
-drop table if exists teacherjoingroup;
+drop table if exists teacherjoingroup;*/
 
 /*==============================================================*/
 /* Table: ClassGroup                                            */
 /*==============================================================*/
 create table ClassGroup
 (
-   gid                            numeric(8,0)                   not null AUTO_INCREMENT,
+   gid                            numeric(8,0)                   not null,
    g_name                         varchar(20)                    not null,
    g_date                         datetime                       not null,
    g_num                          bigint                         not null,
