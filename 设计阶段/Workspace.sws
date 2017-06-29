@@ -5,7 +5,9 @@
 <Workspace>
 	<Local Expanded="Yes">
 		<Model Expanded="Yes" ID="{B3FC41C0-BC02-4975-BF43-2DE2CEA64685}" Name="test_project" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="test_project.cdm"/>
-		<Model Expanded="Yes" ID="{BACC367D-E39D-43E7-83C3-CEBD8CF02FF8}" Name="test_project3" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project3.pdm"/>
+		<Model Expanded="Yes" ID="{F104D5D7-BF0D-421B-9091-165D55B4F059}" Name="test_project_mysql5" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project_mysql5.pdm"/>
+		<Model Expanded="Yes" ID="{BC4D58F3-56E4-4937-A512-684AD02E9C35}" Name="test_project_mysql4" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project_mysql4.pdm"/>
+		<Model Expanded="Yes" ID="{BACC367D-E39D-43E7-83C3-CEBD8CF02FF8}" Name="test_project3" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project3.pdm"/>
 		<Model Expanded="Yes" ID="{6F86EC8A-FD39-490D-8120-F53E55EE8403}" Name="test_project2" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project2.pdm"/>
 		<Model Expanded="Yes" ID="{3EA08B48-FF1D-4CD5-B94B-8A885DA1CB8B}" Name="test_project" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="test_project.pdm"/>
 	</Local>

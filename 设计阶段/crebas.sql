@@ -319,7 +319,7 @@ go
 create table teacherjoingroup (
    t_num                bigint               not null,
    g_num                bigint               not null,
-   G_Flag               bit                  null default 0,
+   G_Flag               bit                  not null default 0,
    constraint PK_TEACHERJOINGROUP primary key (t_num, g_num)
 )
 go
