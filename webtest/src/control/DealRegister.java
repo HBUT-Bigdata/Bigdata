@@ -65,6 +65,8 @@ public class DealRegister extends HttpServlet {
 			
 			PreparedStatement ps;
 			ResultSet rs;
+			
+			
 			if ()
 			
 			
@@ -74,9 +76,5 @@ public class DealRegister extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		
-		
-		
-		
 	}
 }
