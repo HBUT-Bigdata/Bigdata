@@ -1,4 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html>
 <head>
 	<title>Create Account</title>
 	<meta name="keywords" content="" />
@@ -10,70 +13,98 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
 </head>
+<%
+	String role=request.getParameter("optionsRadios");
+	if (role!=null) session.setAttribute("role", role);
+	else role=(String) session.getAttribute("role");
+%>
+
+
 <body class="templatemo-bg-gray">
 	<h1 class="margin-bottom-15">Create Account</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="DealRegister" method="post">
 				<div class="form-inner">
 					<div class="form-group">
 			          <div class="col-md-6">		          	
-			            <label for="first_name" class="control-label">First Name</label>
-			            <input type="text" class="form-control" id="first_name" placeholder="">		            		            		            
+			            <label for="first_name" class="control-label">Your Name</label>
+			            <input type="text" class="form-control" name="Name" placeholder="">		            		            		            
 			          </div>  
 			          <div class="col-md-6">		          	
-			            <label for="last_name" class="control-label">Last Name</label>
-			            <input type="text" class="form-control" id="last_name" placeholder="">		            		            		            
-			          </div>             
+			            <label for="last_name" class="control-label"><%=role%> ID</label>
+			            <input type="text" class="form-control" name="ID" placeholder="">		            		            		            
+			          </div>
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">		          	
+			            <label for="username" class="control-label">Birthday</label>
+			            <div class="form-group">
+			            
+			            <div class="col-md-6">
+			      <input type="text" class="form-control" name="Year" placeholder="Year">		            		            		    		        
+			            </div>
+			            <div class="col-md-3">
+			            <input type="text" class="form-control" name="Month" placeholder="Month">			        
+			            </div>
+			            <div class="col-md-3">
+			            <input type="text" class="form-control" name="Day" placeholder="Day">			        
+			            
+			            </div>
+			            </div>
+			           </div>      
+			      </div>
+			        
+			        <div class="form-group">
+			          <div class="col-md-12">		          	
 			            <label for="username" class="control-label">Email</label>
-			            <input type="email" class="form-control" id="email" placeholder="">		            		            		            
+			            <input type="email" class="form-control" name="email" placeholder="name@email.com">		            		            		            
 			          </div>              
-			        </div>			
+			        </div>
+			        			
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
 			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
 			          </div>
+			          
 			          <div class="col-md-6 templatemo-radio-group">
 			          	<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Male
+		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="Male"> Male
 		          		</label>
 		          		<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Female
+		          			<input type="radio" name="optionsRadios" id="optionsRadios2" value="Female"> Female
 		          		</label>
 			          </div>             
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-6">
 			            <label for="password" class="control-label">Password</label>
-			            <input type="password" class="form-control" id="password" placeholder="">
+			            <input type="password" class="form-control" name="password" placeholder="">
 			          </div>
 			          <div class="col-md-6">
 			            <label for="password" class="control-label">Confirm Password</label>
-			            <input type="password" class="form-control" id="password_confirm" placeholder="">
+			            <input type="password" class="form-control" name="password_confirm" placeholder="">
 			          </div>
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <label><input type="checkbox">I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>
+			     <!-- <label><input type="checkbox">I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>-->
 			          </div>
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
 			            <input type="submit" value="Create account" class="btn btn-info">
-			            <a href="login-1.html" class="pull-right">Login</a>
+			            <a href="login.jsp" class="pull-right">Login</a>
 			          </div>
 			        </div>	
 				</div>				    	
 		      </form>		      
 		</div>
 	</div>
-
-
+	
 	<!-- Modal -->
+	<!--  
 	<div class="modal fade" id="templatemo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -91,8 +122,12 @@
 	      </div>
 	    </div>
 	  </div>
-	</div>
+	</div> 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+-->
 </body>
-</html>
+</html> 
+
