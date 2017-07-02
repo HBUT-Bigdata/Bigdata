@@ -54,13 +54,10 @@ public class DealRegister extends HttpServlet {
 		
 		String name=request.getParameter("Name");
 		String sex=request.getParameter("optionsRadios");
-		String Year=request.getParameter("Year");
-		String Month=request.getParameter("Month");
-		String Day=request.getParameter("Day");
-		String birth=date(Year,Month,Day);
+		String birth=request.getParameter("birth");
 		String Id=request.getParameter("ID");
-		
-		String handle=request.getParameter("username");
+
+		String handle=request.getParameter("User");
 		String pwd1=request.getParameter("password");
 		String pwd2=request.getParameter("password_confirm");
 		if (pwd1.equals(pwd2)==false)
@@ -85,8 +82,15 @@ public class DealRegister extends HttpServlet {
 			if (role.equals("Teacher")==true)
 			{
 				Teacher tea=new Teacher(name,sex,birth,Id,handle,pwd1,false);
-				tea.InsertDB(dbConn);
-				Flag=true;
+				if (!tea.SearchInDB(dbConn))
+				{
+					tea.InsertDB(dbConn);
+					Flag=true;
+				}
+				else 
+				{
+					response.sendRedirect("www");
+				}
 			}
 			if (role.equals("Student")==true)
 			{
@@ -100,7 +104,6 @@ public class DealRegister extends HttpServlet {
 				{
 					stu.InsertDB(dbConn);
 					Flag=true;
-					
 				}
 			}
 			if (Flag) response.sendRedirect("testlogin.jsp");

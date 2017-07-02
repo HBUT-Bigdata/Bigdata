@@ -41,7 +41,7 @@
 			            <label for="username" class="control-label">Birthday</label>
 			            <div class="form-group">
 			             <div class="col-md-12">
-			             <input class="form-control" type="text" onClick="WdatePicker()"> 
+			             <input class="form-control" name="birth" type="text" onClick="WdatePicker()"> 
 			            </div>	
 			            </div>
 			           </div>      
@@ -57,7 +57,7 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
+			            <input type="text" class="form-control" name="User" placeholder="">		            		            		            
 			          </div>
 			          
 			          <div class="col-md-6 templatemo-radio-group">
