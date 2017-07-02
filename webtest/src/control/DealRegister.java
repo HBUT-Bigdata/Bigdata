@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import member.Student;
+import member.Teacher;
+
 
 /**
  * Servlet implementation class DealRegister
@@ -37,11 +40,26 @@ public class DealRegister extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	public String date(String Year,String Month,String Day)
+	{
+		String ret=Year+"-"+Month+"-"+Day; 
+		return ret;
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+        response.setContentType("text/html;charset=utf-8");  
+        request.setCharacterEncoding("utf-8");  
 		
-		String name=request.getParameter("name");
+		String name=request.getParameter("Name");
+		String sex=request.getParameter("optionsRadios");
+		String Year=request.getParameter("Year");
+		String Month=request.getParameter("Month");
+		String Day=request.getParameter("Day");
+		String birth=date(Year,Month,Day);
+		String Id=request.getParameter("ID");
+		
 		String handle=request.getParameter("username");
 		String pwd1=request.getParameter("password");
 		String pwd2=request.getParameter("password_confirm");
@@ -63,17 +81,33 @@ public class DealRegister extends HttpServlet {
 			Class.forName(driverName);
 			Connection dbConn=DriverManager.getConnection(dbURL,userName,userPwd);
 			
-			PreparedStatement ps;
-			ResultSet rs;
-			
-			
-			if ()
-			
-			
-			
+			boolean Flag=false;
+			if (role.equals("Teacher")==true)
+			{
+				Teacher tea=new Teacher(name,sex,birth,Id,handle,pwd1,false);
+				tea.InsertDB(dbConn);
+				Flag=true;
+			}
+			if (role.equals("Student")==true)
+			{
+				Student stu=new Student(name,sex,birth,Id,handle,pwd1);
+				if (stu.SearchInDB(dbConn)==true) 
+				{
+					stu.show();
+					response.sendRedirect("www");
+				}
+				else 
+				{
+					stu.InsertDB(dbConn);
+					Flag=true;
+					
+				}
+			}
+			if (Flag) response.sendRedirect("testlogin.jsp");
 		}
 		catch(Exception e)
 		{
+			response.sendRedirect("http://www.baidu.com");
 			e.printStackTrace();
 		}
 	}

@@ -11,7 +11,6 @@ public class Teacher extends Role
 
 	String head="update teacher set ";
 	String tail="where t_handle='"+handle+"';";
-
 	
 	public Teacher(String a, String b, String c, String d, String e, String f,boolean flag) {
 		super(a, b, c, d, e, f);
@@ -24,19 +23,33 @@ public class Teacher extends Role
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean SearchInDB(Connection dbConn,ResultSet rs) throws SQLException
+	public void show()
 	{
-		PreparedStatement ps=dbConn.prepareStatement("select * from teacher where t_handle='"
-				+handle+"' and t_password='"+pwd+"';"
-				);
-		rs=ps.executeQuery();
-		if (rs.next()) return true;
-		return false;
+		System.out.println(name);
+		System.out.println(sex);
+		System.out.println(birth);
+		System.out.println(Id);
+		System.out.println(handle);
+		System.out.println(pwd);
+		System.out.println(Flag);
+	}
+	public PreparedStatement ThisPs(Connection dbConn) throws SQLException
+	{
+		return dbConn.prepareStatement("select * from teacher where t_handle='"+handle+"' and t_password='"+pwd+"';");
+	}
+	
+	public boolean SearchInDB(Connection dbConn) throws SQLException
+	{
+		PreparedStatement ps=dbConn.prepareStatement("select * from teacher where t_handle='"+handle+"' and t_password='"+pwd+"';");
+		ResultSet rs=ps.executeQuery();
+		boolean flag=rs.next();
+		rs.close();
+		return flag;
 	}
 	
 	public boolean InsertDB(Connection dbConn) throws SQLException
 	{
-		String sql="insert into teacher values(0,?,?,?,?,?,?);";
+		String sql="insert into teacher values(0,?,?,?,?,?,?,false);";
 		
 		PreparedStatement ps=dbConn.prepareStatement(sql);
 		ps.setString(1,name);
@@ -51,22 +64,26 @@ public class Teacher extends Role
 	
 	public boolean Changepwd(Connection dbConn,String old,String now) throws SQLException
 	{
-		ResultSet rs=null;
-		if (SearchInDB(dbConn, rs)==false) return false;
+		if (SearchInDB(dbConn)==false) return false;
+		PreparedStatement ps=ThisPs(dbConn);
+		ResultSet rs=ps.executeQuery();
+		rs.next();
 		String pass=rs.getString(7);
 		if (old.equals(pass)==true)
 		{
-			PreparedStatement ps=dbConn.prepareStatement(head+"t_password='"+now+"' "+tail);
-			ps.executeUpdate();
+			PreparedStatement Ps=dbConn.prepareStatement(head+"t_password='"+now+"' "+tail);
+			Ps.executeUpdate();
 		}
+		rs.close();
 		return true;
 	}
 	
 	public boolean updateDB(Connection dbConn) throws SQLException 
 	{
-		ResultSet rs=null;
-		if (SearchInDB(dbConn, rs)==false) return false;
-		
+		if (SearchInDB(dbConn)==false) return false;
+		PreparedStatement Ps=ThisPs(dbConn);
+		ResultSet rs=Ps.executeQuery();
+		rs.next();
 		Teacher s=new Teacher(rs,rs.getBoolean(8));
 		if (name.equals(s.name)==false)	
 		{
@@ -88,6 +105,7 @@ public class Teacher extends Role
 			PreparedStatement ps=dbConn.prepareStatement(head+"t_num='"+Id+"' "+tail);
 			ps.executeUpdate();
 		}
+		rs.close();
 		return true;
 	}
 }
