@@ -18,18 +18,18 @@
 <body class="templatemo-bg-gray">
 	<div class="container">
 		<div class="col-md-12">
-			<h1 class="margin-bottom-15">Login Form One</h1>
+			<h1 class="margin-bottom-15">Login</h1>
 			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="DealLogin" method="post">				
 		        <div class="form-group mineright">
 		        <div class="col-md-12 ">
 			         <label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="Manager"> Manager
+		          			<input type="radio" name="optionsRadios" checked="checked"  id="optionsRadios1" value="Manager"> Manager
 		          		</label>
 		          		<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios2" value="Teacher"> Teacher
+		          			<input type="radio" name="optionsRadios"  id="optionsRadios2" value="Teacher"> Teacher
 		          		</label>
 		          		<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios3" value="Student"> Student
+		          			<input type="radio" name="optionsRadios"  id="optionsRadios3" value="Student"> Student
 		          		</label>
 			    </div>
 			    </div>        
@@ -61,8 +61,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input type="submit" value="Log in" class="btn btn-info">
-		          		<a href="forgot-password.jsp" class="text-right pull-right">Forgot password?</a>
+		          		<input type="submit" value="Log in" class="btn btn-info pull-right">	
 		          	</div>
 		          </div>
 		        </div>
@@ -71,6 +70,7 @@
 		      <div class="text-center">
 		      	<a href="register_choose.jsp" class="templatemo-create-new">Create new account <i class="fa fa-arrow-circle-o-right"></i></a>	
 		      </div>
+
 		</div>
 	</div>
 

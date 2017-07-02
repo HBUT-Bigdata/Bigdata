@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,14 +13,13 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
 </head>
-
 <%
 	String role=request.getParameter("optionsRadios");
 	if (role!=null) session.setAttribute("role", role);
 	else role=(String) session.getAttribute("role");
 %>
 
-
+<script language="javascript" type="text/javascript" src="Date/WdatePicker.js"></script>
 <body class="templatemo-bg-gray">
 	<h1 class="margin-bottom-15">Create Account</h1>
 	<div class="container">
@@ -41,17 +40,9 @@
 			          <div class="col-md-12">		          	
 			            <label for="username" class="control-label">Birthday</label>
 			            <div class="form-group">
-			            
-			            <div class="col-md-6">
-			      <input type="text" class="form-control" name="Year" placeholder="Year">		            		            		    		        
-			            </div>
-			            <div class="col-md-3">
-			            <input type="text" class="form-control" name="Month" placeholder="Month">			        
-			            </div>
-			            <div class="col-md-3">
-			            <input type="text" class="form-control" name="Day" placeholder="Day">			        
-			            
-			            </div>
+			             <div class="col-md-12">
+			             <input class="form-control" type="text" onClick="WdatePicker()"> 
+			            </div>	
 			            </div>
 			           </div>      
 			      </div>
@@ -66,7 +57,7 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" name="username" placeholder="">		            		            		            
+			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
 			          </div>
 			          
 			          <div class="col-md-6 templatemo-radio-group">
@@ -126,6 +117,8 @@
 	</div> 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
 -->
 </body>
 </html> 
