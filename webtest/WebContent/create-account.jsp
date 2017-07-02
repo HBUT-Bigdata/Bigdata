@@ -13,6 +13,7 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
 </head>
+
 <%
 	String role=request.getParameter("optionsRadios");
 	if (role!=null) session.setAttribute("role", role);
@@ -65,7 +66,7 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
+			            <input type="text" class="form-control" name="username" placeholder="">		            		            		            
 			          </div>
 			          
 			          <div class="col-md-6 templatemo-radio-group">
@@ -125,8 +126,6 @@
 	</div> 
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
 -->
 </body>
 </html> 

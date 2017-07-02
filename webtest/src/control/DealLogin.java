@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import member.Student;
+import member.Teacher;
+
 /**
  * Servlet implementation class DealLogin
  */
@@ -39,6 +42,10 @@ public class DealLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");  
+        request.setCharacterEncoding("utf-8");  
+
+		
 		String flag=request.getParameter("optionsRadios");
 		String username=request.getParameter("username");
 		String pwd=request.getParameter("password");
@@ -55,6 +62,7 @@ public class DealLogin extends HttpServlet {
 		  {
 			  Class.forName(driverName);
 			  Connection dbConn=DriverManager.getConnection(dbURL,userName,userPwd);
+			  
 			  if (flag.equals("Manager")) 
 			  {
 				  ps= dbConn.prepareStatement(head+"manager where r_handler='"+username+"' and r_password='"+pwd+"';");
@@ -71,21 +79,16 @@ public class DealLogin extends HttpServlet {
 				  rs=ps.executeQuery();
 			  }
 			  else rs=null;
-			  
-			  if (rs.next()) response.sendRedirect("testlogin.jsp");			  
-			  else 
-			  {
-				  response.sendRedirect("create-account.jsp");
-			  }
+			  boolean FLAG=rs.next();
+			  rs.close();
+			  if (FLAG) response.sendRedirect("testlogin.jsp");			  
+			  else  response.sendRedirect("www.baidu.com");
 		  }
 		  catch(Exception e)
 		  {
 			  e.printStackTrace();
 			  System.out.print("连接失败");
-			  response.sendRedirect("create-account.jsp");
+			  response.sendRedirect("www.baidu.com");
 		  }
-
-	
 	}
-
 }
