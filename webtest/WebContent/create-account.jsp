@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,7 @@
 	else role=(String) session.getAttribute("role");
 %>
 
-
+<script language="javascript" type="text/javascript" src="Date/WdatePicker.js"></script>
 <body class="templatemo-bg-gray">
 	<h1 class="margin-bottom-15">Create Account</h1>
 	<div class="container">
@@ -40,17 +40,9 @@
 			          <div class="col-md-12">		          	
 			            <label for="username" class="control-label">Birthday</label>
 			            <div class="form-group">
-			            
-			            <div class="col-md-6">
-			      <input type="text" class="form-control" name="Year" placeholder="Year">		            		            		    		        
-			            </div>
-			            <div class="col-md-3">
-			            <input type="text" class="form-control" name="Month" placeholder="Month">			        
-			            </div>
-			            <div class="col-md-3">
-			            <input type="text" class="form-control" name="Day" placeholder="Day">			        
-			            
-			            </div>
+			             <div class="col-md-12">
+			             <input class="form-control" type="text" onClick="WdatePicker()"> 
+			            </div>	
 			            </div>
 			           </div>      
 			      </div>

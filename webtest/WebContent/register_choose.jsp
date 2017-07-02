@@ -25,18 +25,19 @@
 		 	</div>
 		     <div class="form-group mineright">
 		     		<label class="radio-inline">
-		          	<input type="radio" name="optionsRadios" id="optionsRadios2" value="Teacher"> Teacher 
+		          	<input type="radio" name="optionsRadios" checked="checked" id="optionsRadios1" value="Teacher"> Teacher 
 		          	</label>
 		     </div>
 		     <div class="form-group mineright">
 		            <label class="radio-inline">
-		          	<input type="radio" name="optionsRadios" id="optionsRadios3" value="Student"> Student
+		          	<input type="radio"  name="optionsRadios" id="optionsRadios2" value="Student"> Student
 		          	</label> 
 		     </div>
 		     <hr>
 		     <div class="form-group">
 		          <div class="col-md-6">
 		          	<div class="control-wrapper">
+		          	if 
 		          	<a class="pull-left" href="login.jsp">Log in</a>
 		          	<a type="submit"></a>
 		          	</div>
