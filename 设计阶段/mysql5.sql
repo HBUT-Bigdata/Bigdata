@@ -105,7 +105,6 @@ create table student
    s_birth              date not null,
    s_handle             varchar(20) not null,
    s_password           varchar(20) not null,
-   s_Flag               bool not null default false,
    s_num                bigint not null,
    primary key (sid, s_num)
 );
