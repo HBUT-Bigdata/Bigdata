@@ -13,13 +13,33 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<title>简单表单验证</title> 
+    <script type="text/javascript">
+    window.onload=function()
+    {
+    	var bt=document.getElementById("bt");
+    	bt.onclick=function()
+    	{
+    	if(document.myform.username.value=="")
+    	{
+    	alert("用户名不能为空!");
+    	document.myform.username.focus();
+    	return false;
+    	} 
+    	else if(document.myform.password.value=="")
+    	{
+    	alert("密码不能为空!");
+    	document.myform.password.focus();
+    	return false; 
+    	}
+</script>
 </head>
 
 <body class="templatemo-bg-gray">
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Login</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="DealLogin" method="post">				
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="index.jsp" method="post">				
 		        <div class="form-group mineright">
 		        <div class="col-md-12 ">
 			         <label class="radio-inline">
@@ -32,12 +52,14 @@
 		          			<input type="radio" name="optionsRadios"  id="optionsRadios3" value="Student"> Student
 		          		</label>
 			    </div>
-			    </div>        
+			    </div> 
 		        <div class="form-group">
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
+		            
 		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
 		            	<input type="text" class="form-control" name="username" id="username" placeholder="Username">
+		            	
 		            </div>		            	            
 		          </div>              
 		        </div>
@@ -49,6 +71,7 @@
 		            </div>
 		          </div>
 		        </div>
+                
 		        <div class="form-group">
 		          <div class="col-md-12">
 	             	<div class="checkbox control-wrapper">
@@ -61,7 +84,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input type="submit" value="Log in" class="btn btn-info pull-right">	
+		          		<input  type="submit" value="Log in" id="bt" class="btn btn-info pull-right">
 		          	</div>
 		          </div>
 		        </div>

@@ -37,7 +37,7 @@
 		     <div class="form-group">
 		          <div class="col-md-6">
 		          	<div class="control-wrapper">
-		          	if 
+		          	
 		          	<a class="pull-left" href="login.jsp">Log in</a>
 		          	<a type="submit"></a>
 		          	</div>

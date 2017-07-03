@@ -1,27 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"  %>
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Account</title>
+	<title>Personal</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">	
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
 </head>
-<%
-	String role=request.getParameter("optionsRadios");
-	if (role!=null) session.setAttribute("role", role);
-	else role=(String) session.getAttribute("role");
-%>
 
 <script language="javascript" type="text/javascript" src="Date/WdatePicker.js"></script>
 <body class="templatemo-bg-gray">
-	<h1 class="margin-bottom-15">Create Account</h1>
+	<h1 class="margin-bottom-15"></h1>
 	<div class="container">
 		<div class="col-md-12">			
 			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="DealRegister" method="post">
@@ -32,7 +28,7 @@
 			            <input type="text" class="form-control" name="Name" placeholder="">		            		            		            
 			          </div>  
 			          <div class="col-md-6">		          	
-			            <label for="last_name" class="control-label"><%=role%> ID</label>
+			            <label for="last_name" class="control-label">Your ID</label>
 			            <input type="text" class="form-control" name="ID" placeholder="">		            		            		            
 			          </div>
 			        </div>
@@ -40,12 +36,12 @@
 			          <div class="col-md-12">		          	
 			            <label for="username" class="control-label">Birthday</label>
 			            <div class="form-group">
-			             <div class="col-md-12">
-			             <input class="form-control" name="birth" type="text" onClick="WdatePicker()"> 
-			            </div>	
-			            </div>
-			           </div>      
-			      </div>
+			            	<div class="col-md-12">
+			            		<input class="form-control" name="birth" type="text" onclick="WdatePicker()"/>
+			              </div>
+			            </div>  	
+			          </div>
+			        </div>      
 			        
 			        <div class="form-group">
 			          <div class="col-md-12">		          	
@@ -57,12 +53,12 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" name="User" placeholder="">		            		            		            
+			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
 			          </div>
 			          
-			          <div class="col-md-6 templatemo-radio-group">
+			          <div class="col-md-6 templatemo-radio-gro">
 			          	<label class="radio-inline">
-		          			<input type="radio" checked="checked" name="optionsRadios" id="optionsRadios1" value="Male"> Male
+		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="Male"  > Male
 		          		</label>
 		          		<label class="radio-inline">
 		          			<input type="radio" name="optionsRadios" id="optionsRadios2" value="Female"> Female
@@ -79,6 +75,12 @@
 			            <input type="password" class="form-control" name="password_confirm" placeholder="">
 			          </div>
 			        </div>
+			         <div class="text-center">
+                  <a href="Video.jsp" class="templatemo-create-new">上传视频<i class="fa fa-arrow-circle-down"></i></a>
+			         </div>
+			        </div>
+			       </div>
+			        
 			        <div class="form-group">
 			          <div class="col-md-12">
 			     <!-- <label><input type="checkbox">I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>-->
@@ -122,3 +124,5 @@
 -->
 </body>
 </html> 
+
+    
