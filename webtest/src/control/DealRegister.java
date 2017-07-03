@@ -70,7 +70,7 @@ public class DealRegister extends HttpServlet {
 		String driverName="com.mysql.jdbc.Driver";
 		String dbURL="jdbc:mysql://localhost:3306/Bigdata";
 		String userName="root";
-		String userPwd="srn12344321";
+		String userPwd="123456789";
 		String role=(String) request.getSession().getAttribute("role");	
 		
 		try
@@ -82,28 +82,29 @@ public class DealRegister extends HttpServlet {
 			if (role.equals("Teacher")==true)
 			{
 				Teacher tea=new Teacher(name,sex,birth,Id,handle,pwd1,false);
-				if (!tea.SearchInDB(dbConn))
+				if (!tea.SearchHandle(dbConn, handle))
 				{
 					tea.InsertDB(dbConn);
 					Flag=true;
 				}
 				else 
 				{
+					//handle already exist;
 					response.sendRedirect("www");
 				}
 			}
 			if (role.equals("Student")==true)
 			{
 				Student stu=new Student(name,sex,birth,Id,handle,pwd1);
-				if (stu.SearchInDB(dbConn)==true) 
-				{
-					stu.show();
-					response.sendRedirect("www");
-				}
-				else 
+				if (!stu.SearchHandle(dbConn, handle)) 
 				{
 					stu.InsertDB(dbConn);
 					Flag=true;
+				}
+				else 
+				{
+					//handle qlready exist.
+					response.sendRedirect("www");;
 				}
 			}
 			if (Flag) response.sendRedirect("testlogin.jsp");

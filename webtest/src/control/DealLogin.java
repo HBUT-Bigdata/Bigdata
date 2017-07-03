@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.Student;
-import member.Teacher;
-
 /**
  * Servlet implementation class DealLogin
  */
@@ -52,7 +49,7 @@ public class DealLogin extends HttpServlet {
 		String driverName="com.mysql.jdbc.Driver";
 		String dbURL="jdbc:mysql://localhost:3306/Bigdata";
 		String userName="root";
-		String userPwd="srn12344321";
+		String userPwd="123456789";
 
 		PreparedStatement ps;
 		

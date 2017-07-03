@@ -22,6 +22,11 @@ public class Teacher extends Role
 		this.Flag=flag;
 		// TODO Auto-generated constructor stub
 	}
+	public void setFlag(boolean t)
+	{
+		Flag=t;
+		return ;
+	}
 	
 	public void show()
 	{
@@ -41,6 +46,15 @@ public class Teacher extends Role
 	public boolean SearchInDB(Connection dbConn) throws SQLException
 	{
 		PreparedStatement ps=dbConn.prepareStatement("select * from teacher where t_handle='"+handle+"' and t_password='"+pwd+"';");
+		ResultSet rs=ps.executeQuery();
+		boolean flag=rs.next();
+		rs.close();
+		return flag;
+	}
+	
+	public boolean SearchHandle(Connection db,String Handle) throws SQLException
+	{
+		PreparedStatement ps=db.prepareStatement("select * from teacher where t_handle='"+Handle+"';");
 		ResultSet rs=ps.executeQuery();
 		boolean flag=rs.next();
 		rs.close();

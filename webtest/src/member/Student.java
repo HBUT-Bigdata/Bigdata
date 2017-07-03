@@ -21,6 +21,15 @@ public class Student extends Role
 		return dbConn.prepareStatement("select * from student where s_handle='"+handle+"' and s_password='"+pwd+"';");
 	}
 	
+	public boolean SearchHandle(Connection db,String Handle) throws SQLException
+	{
+		PreparedStatement ps=db.prepareStatement("select * from student where s_handle='"+handle+"';");
+		ResultSet rs=ps.executeQuery();
+		boolean flag=rs.next();
+		rs.close();
+		return flag;
+	}
+	
 	public boolean SearchInDB(Connection dbConn) throws SQLException
 	{
 		PreparedStatement ps=dbConn.prepareStatement("select * from student where s_handle='"+handle+"' and s_password='"+pwd+"';");
