@@ -20,18 +20,21 @@
     	var bt=document.getElementById("bt");
     	bt.onclick=function()
     	{
-    	if(document.myform.username.value=="")
-    	{
-    	alert("用户名不能为空!");
-    	document.myform.username.focus();
-    	return false;
-    	} 
-    	else if(document.myform.password.value=="")
-    	{
-    	alert("密码不能为空!");
-    	document.myform.password.focus();
-    	return false; 
+    		if(document.myform.username.value=="")
+    		{
+    		alert("用户名不能为空!");
+    		document.myform.username.focus();
+    		return false;
+    		} 
+    		else if(document.myform.password.value=="")
+    		{
+    		alert("密码不能为空!");
+    		document.myform.password.focus();
+    		return false; 
+    		}
     	}
+    }
+
 </script>
 </head>
 
@@ -39,7 +42,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Login</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="index.jsp" method="post">				
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="DealLogin" method="post">				
 		        <div class="form-group mineright">
 		        <div class="col-md-12 ">
 			         <label class="radio-inline">

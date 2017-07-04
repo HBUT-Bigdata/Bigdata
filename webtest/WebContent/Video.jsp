@@ -74,28 +74,39 @@
 </head>
 
 <body class="templatemo-bg-gray">
-	<h1 class="margin-bottom-15">上传视频</h1>
+	<h1 class="margin-bottom-15">上传课件</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="DealRegister" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="/TomcatTest/UploadServlet" enctype="multipart/form-data" method="post">
 				<div class="form-inner">
+				
 					<div class="form-group">
+					  
 			          <div class="col-md-6">		          	
-			            <label for="first_name" class="control-label">视频名称</label>
-			            <input type="text" class="form-control" name="Name" placeholder="">		            		            		            
-			          </div>  
+			            <label for="first_name" class="control-label">课件名称</label>
+			            <input type="text" class="form-control" name="ClassName" placeholder="">		            		            		            
+		          
+			          </div>
+	
+			          <div class="col-md-6">
+			           	<label class="control-label"> 选择一个文件 </label>    
+			             <input type="file" name="uploadFile" />
+			          </div>
+			          <!--    
 			          <div class="col-md-6">		          	
 			            <label for="last_name" class="control-label">作者</label>
 			            <input type="text" class="form-control" name="ID" placeholder="">		            		            		            
-			          </div>
-			        </div>
+			          </div>  
+			        </div> 
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
-			            <label for="username" class="control-label">上传者</label>
-			             <input class="form-control" name="birth" type="text" > 
+			            <label class="control-label">上传者</label>
+			             <input class="form-control" name="Pusher" type="text" > 
 			            </div>	
-			          </div>      
+			          </div> -->    
+			          </div>  
 			      </div>
+			      
 			      <!--
                   	作者：offline
                   	时间：2017-07-03
@@ -123,17 +134,12 @@
 			        <div id="progressNumber"></div>
 			        </div>
                   -->
-                  <form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
-                  	选择一个文件:
-                  	<input type="file" name="uploadFile" />
                   	<br/><br/>
-                  		<input type="submit" value="上传" />
                 
-			        
 			        <div class="form-group">
-			          <div class="col-md-6">
-			            <label for="password" class="control-label">视频简介</label>
-			            <input type="password" class="form-control" name="password" placeholder="">
+			          <div class="col-md-12">
+			            <label class="control-label">简介</label>
+			            <input type="text" class="form-control" name="Describe" placeholder="">
 			          </div>
 
 			        </div>
@@ -144,8 +150,8 @@
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <input type="submit" value="Create account" class="btn btn-info">
-			            <a href="index.jsp" class="pull-right">保存</a>
+			            <input type="submit" value="上传" class="btn btn-info">
+			            <a href="index.jsp" class="pull-right">返回主页</a>
 			        </div>	
 				</div>    
 				</form>

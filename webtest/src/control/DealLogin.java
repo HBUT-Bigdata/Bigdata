@@ -10,6 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import member.Student;
+import member.Teacher;
 
 /**
  * Servlet implementation class DealLogin
@@ -38,6 +42,7 @@ public class DealLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("resource")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");  
         request.setCharacterEncoding("utf-8");  
@@ -77,9 +82,40 @@ public class DealLogin extends HttpServlet {
 			  }
 			  else rs=null;
 			  boolean FLAG=rs.next();
-			  rs.close();
-			  if (FLAG) response.sendRedirect("testlogin.jsp");			  
-			  else  response.sendRedirect("www.baidu.com");
+			  if (FLAG) 
+			  {
+				  HttpSession session=request.getSession();
+				  session.setAttribute("handle", username);
+				  session.setAttribute("pwd", pwd);
+				  if (flag.equals("Student"))
+				  {
+					  ps=dbConn.prepareStatement("select * from student where s_handle='"+username+"';");
+					  rs=ps.executeQuery();
+					  rs.next();
+					  Student stu=new Student(rs);
+					  session.setAttribute("name",stu.name);
+					  session.setAttribute("sex", stu.sex);
+					  session.setAttribute("birth", stu.birth);
+					  session.setAttribute("Id", stu.Id);
+					  
+				  }
+				  else if (flag.equals("Teacher"))
+				  {
+					  ps=dbConn.prepareStatement("select * from teacher where t_handle='"+username+"';");
+					  rs=ps.executeQuery();
+					  rs.next();
+					  Teacher tea=new Teacher(rs,rs.getBoolean(8));
+					  //rs.close(); ps.close();
+					  session.setAttribute("name", tea.name);
+					  session.setAttribute("sex",tea.sex);
+					  session.setAttribute("birth", tea.birth);
+					  session.setAttribute("Id", tea.Id);
+				  }
+				  rs.close();				  
+				  request.getRequestDispatcher("index.jsp").forward(request, response);			  
+			  }
+			  //login failed
+			  //else  response.sendRedirect("www.baidu.com");
 		  }
 		  catch(Exception e)
 		  {

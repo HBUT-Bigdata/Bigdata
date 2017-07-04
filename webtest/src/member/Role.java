@@ -4,12 +4,12 @@ import java.sql.*;
 
 public class Role 
 {
-	String name;
-	String sex;
-	String birth;
-	String Id;
-	String handle;
-	String pwd;
+	public String name;
+	public String sex;
+	public String birth;
+	public String Id;
+	public String handle;
+	public String pwd;
 		
 	public Role(String a,String b,String c,String d,String e,String f)
 	{

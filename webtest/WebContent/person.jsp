@@ -1,3 +1,5 @@
+<%@page import="java.nio.channels.SeekableByteChannel"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -17,7 +19,16 @@
 
 <script language="javascript" type="text/javascript" src="Date/WdatePicker.js"></script>
 <body class="templatemo-bg-gray">
-	<h1 class="margin-bottom-15"></h1>
+<%
+	String name=(String) session.getAttribute("name");
+	String sex=(String)session.getAttribute("sex");
+	String birth=(String)session.getAttribute("birth");
+	String Id=(String)session.getAttribute("Id");
+	String handle=(String)session.getAttribute("handle");
+	String pwd=(String)session.getAttribute("pwd");
+
+%>
+
 	<div class="container">
 		<div class="col-md-12">			
 			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="DealRegister" method="post">
@@ -25,11 +36,11 @@
 					<div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="first_name" class="control-label">Your Name</label>
-			            <input type="text" class="form-control" name="Name" placeholder="">		            		            		            
+			            <input type="text" class="form-control" name="Name" placeholder="" value=<%=name %>   >		            		            		            
 			          </div>  
 			          <div class="col-md-6">		          	
 			            <label for="last_name" class="control-label">Your ID</label>
-			            <input type="text" class="form-control" name="ID" placeholder="">		            		            		            
+			            <input type="text" class="form-control" name="ID" placeholder="" value=<%=Id %>>		            		            		            
 			          </div>
 			        </div>
 			        <div class="form-group">
@@ -37,7 +48,7 @@
 			            <label for="username" class="control-label">Birthday</label>
 			            <div class="form-group">
 			            	<div class="col-md-12">
-			            		<input class="form-control" name="birth" type="text" onclick="WdatePicker()"/>
+			            		<input class="form-control" name="birth" type="text" onclick="WdatePicker()" value=<%=birth %>/>
 			              </div>
 			            </div>  	
 			          </div>
@@ -53,10 +64,10 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" id="username" placeholder="">		            		            		            
+			            <input type="text" class="form-control" id="username" placeholder="" value=<%=handle %>>		            		            		            
 			          </div>
 			          
-			          <div class="col-md-6 templatemo-radio-gro">
+			          <div class="col-md-6 templatemo-radio-group">
 			          	<label class="radio-inline">
 		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="Male"  > Male
 		          		</label>
@@ -79,7 +90,8 @@
                   <a href="Video.jsp" class="templatemo-create-new">上传视频<i class="fa fa-arrow-circle-down"></i></a>
 			         </div>
 			        </div>
-			       </div>
+			   </form> 
+		</div>
 			        
 			        <div class="form-group">
 			          <div class="col-md-12">
@@ -92,10 +104,7 @@
 			            <a href="login.jsp" class="pull-right">Login</a>
 			          </div>
 			        </div>	
-				</div>				    	
-		      </form>		      
-		</div>
-	</div>
+	</div>				    	
 	
 	<!-- Modal -->
 	<!--  
