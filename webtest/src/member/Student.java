@@ -11,6 +11,8 @@ public class Student extends Role
 	public Student(ResultSet rs) throws SQLException
 	{
 		super(rs);
+		Id=rs.getString(7);
+		
 	}
 	public Student(String a, String b, String c, String d, String e, String f) {
 		super(a, b, c, d, e, f);
@@ -18,12 +20,12 @@ public class Student extends Role
 	}
 	public PreparedStatement ThisPs(Connection dbConn) throws SQLException
 	{
-		return dbConn.prepareStatement("select * from student where s_handle='"+handle+"' and s_password='"+pwd+"';");
+		return dbConn.prepareStatement("select * from student where s_handle='"+handle+"';");
 	}
 	
 	public boolean SearchHandle(Connection db,String Handle) throws SQLException
 	{
-		PreparedStatement ps=db.prepareStatement("select * from student where s_handle='"+handle+"';");
+		PreparedStatement ps=db.prepareStatement("select * from student where s_handle='"+Handle+"';");
 		ResultSet rs=ps.executeQuery();
 		boolean flag=rs.next();
 		rs.close();
@@ -88,6 +90,8 @@ public class Student extends Role
 		ResultSet rs=ps.executeQuery();
 		rs.next();
 		Student s=new Student(rs);
+		if (!pwd.equals(s.pwd)) return false;
+		
 		if (name.equals(s.name)==false)	
 		{
 			PreparedStatement Ps=dbConn.prepareStatement(head+"s_name='"+name+"' "+tail);

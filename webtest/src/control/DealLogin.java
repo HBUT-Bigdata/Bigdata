@@ -97,6 +97,7 @@ public class DealLogin extends HttpServlet {
 					  session.setAttribute("sex", stu.sex);
 					  session.setAttribute("birth", stu.birth);
 					  session.setAttribute("Id", stu.Id);
+					  session.setAttribute("role","Student");
 					  
 				  }
 				  else if (flag.equals("Teacher"))
@@ -110,6 +111,7 @@ public class DealLogin extends HttpServlet {
 					  session.setAttribute("sex",tea.sex);
 					  session.setAttribute("birth", tea.birth);
 					  session.setAttribute("Id", tea.Id);
+					  session.setAttribute("role","Teacher");
 				  }
 				  rs.close();				  
 				  request.getRequestDispatcher("index.jsp").forward(request, response);			  
