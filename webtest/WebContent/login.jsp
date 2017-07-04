@@ -42,7 +42,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Login</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="DealLogin" method="post">				
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" name="myform" role="form" action="DealLogin" method="post">				
 		        <div class="form-group mineright">
 		        <div class="col-md-12 ">
 			         <label class="radio-inline">

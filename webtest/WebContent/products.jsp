@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,8 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" value="">
 						</div>
 						<div style="float: left;margin-left: -300px;margin-top: -35px;">
-							<input type="button" 
-							value="个人中心"    width: 32px;height: 34px;/>
+							<input type="button" value="个人中心" width=32px; height=34px;>
 						</div>
 					</div>
 					<div class="col-md-4 top-header-middle">
@@ -317,7 +318,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-1.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -329,7 +330,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-2.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -341,7 +342,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-3.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -356,7 +357,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-4.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -368,7 +369,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-5.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -380,7 +381,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-6.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -395,7 +396,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-7.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -408,7 +409,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-8.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -421,7 +422,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="single.html">
+						<a href="player.html">
 								<img src="images/course-9.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
