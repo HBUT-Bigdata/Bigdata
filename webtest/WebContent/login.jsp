@@ -14,24 +14,26 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
 	<title>简单表单验证</title> 
-    <script type="text/javascript">
+ <script type="text/javascript">
     window.onload=function()
     {
     	var bt=document.getElementById("bt");
     	bt.onclick=function()
     	{
-    	if(document.myform.username.value=="")
+    	if(myform.username.value=="")
     	{
     	alert("用户名不能为空!");
-    	document.myform.username.focus();
+    	myform.username.focus();
     	return false;
     	} 
-    	else if(document.myform.password.value=="")
+    	else if(myform.password.value=="")
     	{
     	alert("密码不能为空!");
-    	document.myform.password.focus();
+    	myform.password.focus();
     	return false; 
     	}
+        }
+    }
 </script>
 </head>
 
@@ -39,7 +41,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">Login</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="index.jsp" method="post">				
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" name="myform" role="form" action="DealLogin" method="post">				
 		        <div class="form-group mineright">
 		        <div class="col-md-12 ">
 			         <label class="radio-inline">
@@ -84,7 +86,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input  type="submit" value="Log in" id="bt" class="btn btn-info pull-right">
+		          		<input type="submit"  value="Log in" id="bt" class="btn btn-info pull-right">
 		          	</div>
 		          </div>
 		        </div>
