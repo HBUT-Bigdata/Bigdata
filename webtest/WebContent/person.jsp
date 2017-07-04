@@ -87,11 +87,7 @@
 			            <label for="password" class="control-label">Confirm Password</label>
 			            <input type="password" class="form-control" name="password_confirm" placeholder="">
 			          </div>
-			        </div>
-			         <div class="text-center">
-                  <a href="Video.jsp" class="templatemo-create-new">上传视频<i class="fa fa-arrow-circle-down"></i></a>
-			         </div>
-			        </div>
+
 			   </form> 
 		</div>
 			        
@@ -102,8 +98,8 @@
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <input type="submit" value="Create account" class="btn btn-info">
-			            <a href="login.jsp" class="pull-right">Login</a>
+			            <input type="submit" value="Person" class="btn btn-info">
+			            <a href="index.jsp" class="pull-right">Save</a>
 			          </div>
 			        </div>	
 	</div>				    	
