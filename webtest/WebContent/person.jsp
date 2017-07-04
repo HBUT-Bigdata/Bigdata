@@ -26,7 +26,9 @@
 	String Id=(String)session.getAttribute("Id");
 	String handle=(String)session.getAttribute("handle");
 	String pwd=(String)session.getAttribute("pwd");
-
+	
+	String M=sex.equals("Male") ? "checked":"";
+	String FM=sex.equals("Female") ? "checked":"";
 %>
 
 	<div class="container">
@@ -69,10 +71,10 @@
 			          
 			          <div class="col-md-6 templatemo-radio-group">
 			          	<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios1" value="Male"  > Male
+		          			<input type="radio" name="optionsRadios" <%=M %> id="optionsRadios1" value="Male"  > Male
 		          		</label>
 		          		<label class="radio-inline">
-		          			<input type="radio" name="optionsRadios" id="optionsRadios2" value="Female"> Female
+		          			<input type="radio" name="optionsRadios" <%=FM %> id="optionsRadios2" value="Female"> Female
 		          		</label>
 			          </div>             
 			        </div>
