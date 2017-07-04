@@ -64,7 +64,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
 							<input type="submit" value="">
 						</div>
-						<div style="float: left;margin-left: -300px;margin-top: -35px;">
+						<div style="float: left;margin-left: -100px;margin-top: -35px;">
+							<input type="button" value="个人中心" width=32px;height=34px;>
+						</div>
+						<div style="float: left;margin-left: -10px;margin-top: -35px;">
 							<input type="button" value="个人中心" width=32px;height=34px;>
 						</div>
 					</div>
