@@ -38,11 +38,12 @@
 					<div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="first_name" class="control-label">Your Name</label>
-			            <input type="text" class="form-control" name="Name" placeholder="" value=<%=name %>   >		            		            		            
+			            <input type="text" class="form-control" name="Name" placeholder="" value=<%=name %>  />		            		            		            
 			          </div>  
 			          <div class="col-md-6">		          	
 			            <label for="last_name" class="control-label">Your ID</label>
-			            <input type="text" class="form-control" name="ID" placeholder="" value=<%=Id %>>		            		            		            
+			            <label for="last_name" class="form-control"><%=Id %></label>
+			             		            		            		            
 			          </div>
 			        </div>
 			        <div class="form-group">
@@ -66,7 +67,7 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			            <input type="text" class="form-control" id="username" placeholder="" value=<%=handle %>>		            		            		            
+			             <label for="last_name" class="form-control"><%=handle %></label>		         
 			          </div>
 			          
 			          <div class="col-md-6 templatemo-radio-group">
@@ -80,15 +81,14 @@
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-6">
-			            <label for="password" class="control-label">Password</label>
-			            <input type="password" class="form-control" name="password" placeholder="">
+			            <label for="password" class="control-label">Old Password</label>
+			            <input type="password" class="form-control" name="old_password" placeholder="">
 			          </div>
 			          <div class="col-md-6">
-			            <label for="password" class="control-label">Confirm Password</label>
-			            <input type="password" class="form-control" name="password_confirm" placeholder="">
+			            <label for="password" class="control-label">New Password</label>
+			            <input type="password" class="form-control" name="_new_password" placeholder="">
 			          </div>
 
-			   </form> 
 		</div>
 			        
 			        <div class="form-group">
@@ -98,11 +98,14 @@
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <input type="submit" value="Person" class="btn btn-info">
-			            <a href="index.jsp" class="pull-right">Save</a>
+			            <input type="submit" value="Save" class="btn btn-info">
+			            <a href="index.jsp"  class="pull-right">Home</a>
 			          </div>
 			        </div>	
-	</div>				    	
+			        </div>
+	</form>
+	</div>		
+	</div>		    	
 	
 	<!-- Modal -->
 	<!--  
