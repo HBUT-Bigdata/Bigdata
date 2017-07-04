@@ -66,9 +66,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div style="float: left;margin-left: -100px;margin-top: -35px;">
 							<input type="button" value="个人中心" width=32px;height=34px;>
+							<a></a>
 						</div>
 						<div style="float: left;margin-left: -10px;margin-top: -35px;">
-							<input type="button" value="个人中心" width=32px;height=34px;>
+							<input type="button" value="" width=32px;height=34px;>
 						</div>
 					</div>
 					<div class="col-md-4 top-header-middle">
