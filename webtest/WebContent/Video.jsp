@@ -14,6 +14,23 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">	
 	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
+<script type="text/javascript">
+    window.onload=function()
+    {
+    	var bt=document.getElementById("bt");
+    	bt.onclick=function()
+    	{
+    		if(myform.ClassName.value=="")
+    		{
+    			alert("课件名称为空!");
+    			myform.ClassName.focus();
+    			return false;
+    		} 
+
+        }
+    }
+    
+</script>
 	<!--
     	作者：offline
     	时间：2017-07-03
@@ -77,14 +94,14 @@
 	<h1 class="margin-bottom-15">上传课件</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="/TomcatTest/UploadServlet" enctype="multipart/form-data" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" name="myform" role="form" action="/TomcatTest/UploadServlet" enctype="multipart/form-data" method="post">
 				<div class="form-inner">
 				
 					<div class="form-group">
 					  
 			          <div class="col-md-6">		          	
 			            <label for="first_name" class="control-label">课件名称</label>
-			            <input type="text" class="form-control" name="ClassName" placeholder="">		            		            		            
+			            <input type="text" class="form-control" id="ClassName" name="ClassName" placeholder="ClassName">		            		            		            
 		          
 			          </div>
 	
@@ -150,7 +167,7 @@
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-12">
-			            <input type="submit" value="上传" class="btn btn-info">
+			            <input type="submit" id="bt" value="上传" class="btn btn-info">
 			            <a href="index.jsp" class="pull-right">返回主页</a>
 			        </div>	
 				</div>    

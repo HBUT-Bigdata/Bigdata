@@ -14,8 +14,7 @@
 		<!--//theme-style-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript">
 			addEventListener("load", function() {
 				setTimeout(hideURLbar, 0);
@@ -26,6 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			}
 		</script>
 		<!--fonts-->
+		
 		<link href='http://fonts.useso.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 		<!--//fonts-->
@@ -64,16 +64,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
 							<input type="submit" value="">
 						</div>
-						<div style="float: left;margin-left: -100px;margin-top: -35px;">
-							<input type="button" onClick="location.href='person.jsp'" value="person" width=32px;height=34px;>
-							<a></a>
+						<div style="float: left; font-size: 20px; margin-left: -100px;margin-top: -35px;">
+						<a href="person.jsp" class="templatemo-create-new">Person<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
-						<div style="float: left;margin-left: -30px;margin-top: -35px;">
-							<input type="button" onClick="location.href='login.jsp'" value="longin" width=32px;height=34px;>
+						<div style="float:left;font-size: 20px; margin-left: -5px;margin-top: -35px;">
+						<a href="register_choose.jsp" class="templatemo-create-new">Register<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
-						<div style="float: left;margin-left: 35px;margin-top: -35px;">
-							<input type="button" onClick="location.href='longout.jsp'" value="longout" width=32px;height=34px;>
+						<div style="float:left;font-size: 20px; margin-left: 100px;margin-top: -35px;">
+						<a href="login.jsp" class="templatemo-create-new">LoginOut<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
+						
 					</div>
 					<div class="col-md-4 top-header-middle">
 						<a href="index.jsp"><img src="" alt="" /></a>
@@ -398,7 +398,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-2.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -411,7 +411,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-3.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -423,7 +423,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-4.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -439,7 +439,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="product-one">
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-5.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -451,7 +451,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-6.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -463,7 +463,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-7.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -475,7 +475,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.html">
+								<a href="products.jsp">
 									<img src="images/pic-8.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>

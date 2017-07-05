@@ -47,19 +47,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" value="">
 						</div>
 
-						<div style="float: left;margin-left: -100px;margin-top: -35px;">
-							<input type="button" onClick="location.href='person.jsp'" value="person" width=32px;height=34px;>
-							<a></a>
+						<div style="float: left; font-size: 20px; margin-left: -100px;margin-top: -35px;">
+						<a href="person.jsp" class="templatemo-create-new">Person<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
-						<div style="float: left;margin-left: -30px;margin-top: -35px;">
-							<input type="button" onClick="location.href='login.jsp'" value="longin" width=32px;height=34px;>
+						<div style="float:left;font-size: 20px; margin-left: -5px;margin-top: -35px;">
+						<a href="register_chooser.jsp" class="templatemo-create-new">Register<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
-						<div style="float: left;margin-left: 35px;margin-top: -35px;">
-							<input type="button" onClick="location.href='longout.jsp'" value="longout" width=32px;height=34px;>
+						<div style="float:left;font-size: 20px; margin-left: 100px;margin-top: -35px;">
+						<a href="login.jsp" class="templatemo-create-new">LoginOut<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
+
 					</div>
 					<div class="col-md-4 top-header-middle">
-						<a href="index.html"><img src="" alt="" /></a>
+						<a href="index.jsp"><img src="" alt="" /></a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -100,10 +100,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<a href="products.jsp">C#</a>
 											</li>
 											<li>
-												<a href="products.html">Swift</a>
+												<a href="products.jsp">Swift</a>
 											</li>
 											<li>
-												<a href="products.html">Git</a>
+												<a href="products.jsp">Git</a>
 											</li>
 										</ul>
 									</div>
