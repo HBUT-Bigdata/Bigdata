@@ -33,7 +33,7 @@
 
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="DealRegister" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="ChangeInfo" method="post">
 				<div class="form-inner">
 					<div class="form-group">
 			          <div class="col-md-6">		          	
@@ -67,7 +67,7 @@
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
 			            <label for="username" class="control-label">Username</label>
-			             <label for="last_name" class="form-control"><%=handle %></label>		         
+			             <label for="last_name"  class="form-control"><%=handle %></label>		         
 			          </div>
 			          
 			          <div class="col-md-6 templatemo-radio-group">
@@ -86,7 +86,7 @@
 			          </div>
 			          <div class="col-md-6">
 			            <label for="password" class="control-label">New Password</label>
-			            <input type="password" class="form-control" name="_new_password" placeholder="">
+			            <input type="password" class="form-control" name="new_password" placeholder="">
 			          </div>
 
 		</div>

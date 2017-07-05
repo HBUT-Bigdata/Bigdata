@@ -3,7 +3,8 @@ package control;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,19 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import member.Student;
-import member.Teacher;
-
 /**
- * Servlet implementation class ChangeInfo
+ * Servlet implementation class ReadInfo
  */
-public class ChangeInfo extends HttpServlet {
+public class ReadInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ChangeInfo() {
+    public ReadInfo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,66 +40,58 @@ public class ChangeInfo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
         response.setContentType("text/html;charset=utf-8");  
         request.setCharacterEncoding("utf-8");  
-		
-		HttpSession session=request.getSession();
-		
+        
+        HttpSession session=request.getSession();
+        
 		String driverName="com.mysql.jdbc.Driver";
 		String dbURL="jdbc:mysql://localhost:3306/Bigdata";
 		String userName="root";
 		String userPwd="123456789";
-		
-		session.setAttribute("from","person");
-		String role=(String)session.getAttribute("role");
-		String handle=(String) session.getAttribute("handle");
-		String Id=(String) session.getAttribute("Id");
 
+		String role=(String) session.getAttribute("role");
+		String handle=(String) session.getAttribute("handle");
+		String from=(String) session.getAttribute("from");
 		
-		String name=request.getParameter("Name");
-		String sex=request.getParameter("optionsRadios");
-		String birth=request.getParameter("birth");
-		String old_pwd=request.getParameter("old_password");
-		String new_pwd=request.getParameter("new_password");
-		
-		
-		try 
+		try
 		{
 			Class.forName(driverName);
 			Connection dbConn=DriverManager.getConnection(dbURL,userName,userPwd);
-			
-			if (role.equals("Student")) 
+
+			if (role.equals("Student"))
 			{
-				
-				Student stu=new Student(name,sex,birth,Id,handle,old_pwd);
-				stu.updateDB(dbConn);
-				
-				//update password
-				
-				if (!new_pwd.isEmpty()) stu.Changepwd(dbConn, old_pwd, new_pwd);
+				PreparedStatement ps=dbConn.prepareStatement("select * from student where s_handle='"+handle+"';");
+				ResultSet rs=ps.executeQuery();
+				rs.next();
+				session.setAttribute("name", rs.getString(2));
+				session.setAttribute("sex",rs.getString(3));
+				session.setAttribute("birth", rs.getString(4));
+				session.setAttribute("Id", rs.getString(7));
+				//session.setAttribute("handle", rs.getString(5));
+				session.setAttribute("pwd", rs.getString(6));
 			
 			}
 			else if (role.equals("Teacher"))
 			{
-				Teacher tea=new Teacher(name,sex,birth,Id,handle,old_pwd,false);
-				tea.updateDB(dbConn);
-				
-				//update password
-				
-				if (!new_pwd.isEmpty()) tea.Changepwd(dbConn, old_pwd, new_pwd);
-			
+				PreparedStatement ps=dbConn.prepareStatement("select * from teacher where t_handle='"+handle+"';");
+				ResultSet rs=ps.executeQuery();
+				rs.next();
+				session.setAttribute("name", rs.getString(2));
+				session.setAttribute("sex",rs.getString(3));
+				session.setAttribute("birth", rs.getString(4));
+				session.setAttribute("Id", rs.getString(5));
+				//session.setAttribute("handle", rs.getString(6));
+				session.setAttribute("pwd", rs.getString(7));
 			}
-			request.getRequestDispatcher("ReadInfo").forward(request, response);
+			if (from.equals("login"))   response.sendRedirect("index.jsp");
+			else if (from.equals("person"))   response.sendRedirect("person.jsp");
+			else  response.sendRedirect("index.jsp");
 			return ;
-		
-		} 
-		catch (Exception e) 
+		}
+		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
-
 }

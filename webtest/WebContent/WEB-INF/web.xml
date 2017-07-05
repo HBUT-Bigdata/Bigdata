@@ -49,4 +49,14 @@
     <servlet-name>ChangeInfo</servlet-name>
     <url-pattern>/ChangeInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadInfo</display-name>
+    <servlet-name>ReadInfo</servlet-name>
+    <servlet-class>control.ReadInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadInfo</servlet-name>
+    <url-pattern>/ReadInfo</url-pattern>
+  </servlet-mapping>
 </web-app>
