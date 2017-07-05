@@ -385,7 +385,7 @@
 						
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-								<a href="products.jsp">
+								<a href="SearchClass?num=1">
 									<img src="images/pic-1.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -398,7 +398,7 @@
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.jsp">
+								<a href="SearchClass?num=2">
 									<img src="images/pic-2.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -410,8 +410,7 @@
 						</div>
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-
-								<a href="products.jsp">
+								<a href="SearchClass?num=3">
 									<img src="images/pic-3.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -422,8 +421,8 @@
 						</div>
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-
-								<a href="products.jsp">
+								
+								<a href="SearchClass?num=4">
 									<img src="images/pic-4.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -439,7 +438,7 @@
 					<div class="product-one">
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-								<a href="products.jsp">
+								<a href="SearchClass?num=5">
 									<img src="images/pic-5.png" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -450,8 +449,7 @@
 						</div>
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
-
-								<a href="products.jsp">
+								<a href="SearchClass?num=6">
 									<img src="images/pic-6.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -463,7 +461,7 @@
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.jsp">
+								<a href="SearchClass?num=7">
 									<img src="images/pic-7.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>
@@ -475,7 +473,7 @@
 						<div class="col-md-3 product-left">
 							<div class="p-one simpleCart_shelfItem">
 
-								<a href="products.jsp">
+								<a href="SearchClass?num=8">
 									<img src="images/pic-8.jpg" alt="" />
 									<div class="mask">
 										<span>点击进入</span>

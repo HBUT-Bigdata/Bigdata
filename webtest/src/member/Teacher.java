@@ -63,7 +63,7 @@ public class Teacher extends Role
 	
 	public boolean InsertDB(Connection dbConn) throws SQLException
 	{
-		String sql="insert into teacher values(0,?,?,?,?,?,?,false);";
+		String sql="insert into teacher values(0,?,?,?,?,?,?,0);";
 		
 		PreparedStatement ps=dbConn.prepareStatement(sql);
 		ps.setString(1,name);

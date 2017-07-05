@@ -1,3 +1,4 @@
+<%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,6 +38,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>				
 </head>
 <body> 
+
+<%
+	String a[]=new String[100];
+	int i=1;
+	String ret=(String)session.getAttribute(String.valueOf(i));	
+	if (ret!=null && !ret.isEmpty())
+	{
+		do
+		{
+			System.out.println(ret);
+			a[i]=ret;
+			i++;
+			ret=(String) session.getAttribute(String.valueOf(i));	
+		} while (ret!=null && !ret.isEmpty()) ;
+	}
+%>
 	
 	<div class="top-header">
 			<div class="container">
@@ -330,7 +347,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[1]%>">
 								<img src="images/course-1.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -342,7 +359,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[2]%>">
 								<img src="images/course-2.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -354,7 +371,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[3]%>">
 								<img src="images/course-3.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -369,7 +386,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[3]%>">
 								<img src="images/course-4.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -381,7 +398,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[4]%>">
 								<img src="images/course-5.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -393,7 +410,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[5]%>">
 								<img src="images/course-6.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -408,7 +425,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[6]%>">
 								<img src="images/course-7.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -421,7 +438,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[7]%>">
 								<img src="images/course-8.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -434,7 +451,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left"> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp">
+						<a href="player.jsp?num=<%=a[8]%>">
 								<img src="images/course-9.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
