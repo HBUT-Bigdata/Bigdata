@@ -42,7 +42,6 @@ public class DealLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	@SuppressWarnings("resource")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");  
         request.setCharacterEncoding("utf-8");  
@@ -82,48 +81,26 @@ public class DealLogin extends HttpServlet {
 			  }
 			  else rs=null;
 			  boolean FLAG=rs.next();
+			  rs.close();
+			  //String a=rs.getString(2);
 			  if (FLAG) 
 			  {
 				  HttpSession session=request.getSession();
 				  session.setAttribute("handle", username);
-				  session.setAttribute("pwd", pwd);
-				  if (flag.equals("Student"))
-				  {
-					  ps=dbConn.prepareStatement("select * from student where s_handle='"+username+"';");
-					  rs=ps.executeQuery();
-					  rs.next();
-					  Student stu=new Student(rs);
-					  session.setAttribute("name",stu.name);
-					  session.setAttribute("sex", stu.sex);
-					  session.setAttribute("birth", stu.birth);
-					  session.setAttribute("Id", stu.Id);
-					  session.setAttribute("role","Student");
-					  
-				  }
-				  else if (flag.equals("Teacher"))
-				  {
-					  ps=dbConn.prepareStatement("select * from teacher where t_handle='"+username+"';");
-					  rs=ps.executeQuery();
-					  rs.next();
-					  Teacher tea=new Teacher(rs,rs.getBoolean(8));
-					  //rs.close(); ps.close();
-					  session.setAttribute("name", tea.name);
-					  session.setAttribute("sex",tea.sex);
-					  session.setAttribute("birth", tea.birth);
-					  session.setAttribute("Id", tea.Id);
-					  session.setAttribute("role","Teacher");
-				  }
-				  rs.close();				  
-				  request.getRequestDispatcher("index.jsp").forward(request, response);			  
+				  session.setAttribute("role", flag);
+				  session.setAttribute("from", "login");
+				  request.getRequestDispatcher("ReadInfo").forward(request, response);			  
 			  }
 			  //login failed
 			  //else  response.sendRedirect("www.baidu.com");
+			  return ;
 		  }
 		  catch(Exception e)
 		  {
 			  e.printStackTrace();
 			  System.out.print("连接失败");
 			  response.sendRedirect("www.baidu.com");
+			  return ;
 		  }
 	}
 }

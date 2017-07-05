@@ -1,7 +1,6 @@
 package member;
 
 import java.sql.*;
-import com.sun.jndi.url.dns.dnsURLContext;
 
 public class Student extends Role 
 {
@@ -12,6 +11,7 @@ public class Student extends Role
 	{
 		super(rs);
 		Id=rs.getString(7);
+		pwd=rs.getString(6);
 		
 	}
 	public Student(String a, String b, String c, String d, String e, String f) {
@@ -23,11 +23,12 @@ public class Student extends Role
 		return dbConn.prepareStatement("select * from student where s_handle='"+handle+"';");
 	}
 	
-	public boolean SearchHandle(Connection db,String Handle) throws SQLException
+	public static boolean SearchHandle(Connection db,String Handle) throws SQLException
 	{
 		PreparedStatement ps=db.prepareStatement("select * from student where s_handle='"+Handle+"';");
 		ResultSet rs=ps.executeQuery();
 		boolean flag=rs.next();
+		
 		rs.close();
 		return flag;
 	}
@@ -85,6 +86,7 @@ public class Student extends Role
 	
 	public boolean updateDB(Connection dbConn) throws SQLException 
 	{
+		
 		if (!SearchInDB(dbConn)) return false;
 		PreparedStatement ps=ThisPs(dbConn);
 		ResultSet rs=ps.executeQuery();

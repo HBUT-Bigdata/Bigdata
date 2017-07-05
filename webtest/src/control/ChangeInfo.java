@@ -3,8 +3,7 @@ package control;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import member.Student;
+import member.Teacher;
 
 /**
  * Servlet implementation class ChangeInfo
@@ -42,16 +42,29 @@ public class ChangeInfo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+        response.setContentType("text/html;charset=utf-8");  
+        request.setCharacterEncoding("utf-8");  
+		
 		HttpSession session=request.getSession();
 		
 		String driverName="com.mysql.jdbc.Driver";
 		String dbURL="jdbc:mysql://localhost:3306/Bigdata";
 		String userName="root";
 		String userPwd="123456789";
+		
+		session.setAttribute("from","person");
 		String role=(String)session.getAttribute("role");
 		String handle=(String) session.getAttribute("handle");
-		PreparedStatement ps;
-		ResultSet rs;
+		String Id=(String) session.getAttribute("Id");
+
+		
+		String name=request.getParameter("Name");
+		String sex=request.getParameter("optionsRadios");
+		String birth=request.getParameter("birth");
+		String old_pwd=request.getParameter("old_password");
+		String new_pwd=request.getParameter("new_password");
+		
 		
 		try 
 		{
@@ -60,21 +73,27 @@ public class ChangeInfo extends HttpServlet {
 			
 			if (role.equals("Student")) 
 			{
-				String name=request.getParameter("Name");
-				String sex=request.
 				
-				Student stu=new Student();
+				Student stu=new Student(name,sex,birth,Id,handle,old_pwd);
+				stu.updateDB(dbConn);
 				
-			
+				//update password
+				
+				if (!new_pwd.isEmpty()) stu.Changepwd(dbConn, old_pwd, new_pwd);
 			
 			}
 			else if (role.equals("Teacher"))
 			{
-				ps=dbConn.prepareStatement("select * from teacher where t_handle='"+handle+"';");
+				Teacher tea=new Teacher(name,sex,birth,Id,handle,old_pwd,false);
+				tea.updateDB(dbConn);
 				
+				//update password
 				
+				if (!new_pwd.isEmpty()) tea.Changepwd(dbConn, old_pwd, new_pwd);
+			
 			}
-		
+			request.getRequestDispatcher("ReadInfo").forward(request, response);
+			return ;
 		
 		} 
 		catch (Exception e) 
@@ -83,12 +102,6 @@ public class ChangeInfo extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		
-		
-		
-		
-		
-		
 	}
 
 }

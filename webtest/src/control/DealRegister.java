@@ -107,12 +107,14 @@ public class DealRegister extends HttpServlet {
 					response.sendRedirect("www");;
 				}
 			}
-			if (Flag) response.sendRedirect("testlogin.jsp");
+			if (Flag) request.getRequestDispatcher("login.jsp").forward(request, response);
+			return;
 		}
 		catch(Exception e)
 		{
 			response.sendRedirect("http://www.baidu.com");
 			e.printStackTrace();
+			return;
 		}
 	}
 }
