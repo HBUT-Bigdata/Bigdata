@@ -46,8 +46,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
 							<input type="submit" value="">
 						</div>
-						<div style="float: left;margin-left: -300px;margin-top: -35px;">
-							<input type="button" value="个人中心" width=32px; height=34px;>
+
+						<div style="float: left;margin-left: -100px;margin-top: -35px;">
+							<input type="button" onClick="location.href='person.jsp'" value="person" width=32px;height=34px;>
+							<a></a>
+						</div>
+						<div style="float: left;margin-left: -30px;margin-top: -35px;">
+							<input type="button" onClick="location.href='login.jsp'" value="longin" width=32px;height=34px;>
+						</div>
+						<div style="float: left;margin-left: 35px;margin-top: -35px;">
+							<input type="button" onClick="location.href='longout.jsp'" value="longout" width=32px;height=34px;>
 						</div>
 					</div>
 					<div class="col-md-4 top-header-middle">
@@ -303,6 +311,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</li>
+					<li class="grid">
+					<a href="Video.jsp">上传视频</a>
+					</li>
 				</ul>
 				</div>
 			</div>

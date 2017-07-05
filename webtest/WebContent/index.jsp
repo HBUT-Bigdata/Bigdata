@@ -65,11 +65,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" value="">
 						</div>
 						<div style="float: left;margin-left: -100px;margin-top: -35px;">
-							<input type="button" value="个人中心" width=32px;height=34px;>
+							<input type="button" onClick="location.href='person.jsp'" value="person" width=32px;height=34px;>
 							<a></a>
 						</div>
-						<div style="float: left;margin-left: -10px;margin-top: -35px;">
-							<input type="button" value="" width=32px;height=34px;>
+						<div style="float: left;margin-left: -30px;margin-top: -35px;">
+							<input type="button" onClick="location.href='login.jsp'" value="longin" width=32px;height=34px;>
+						</div>
+						<div style="float: left;margin-left: 35px;margin-top: -35px;">
+							<input type="button" onClick="location.href='longout.jsp'" value="longout" width=32px;height=34px;>
 						</div>
 					</div>
 					<div class="col-md-4 top-header-middle">
@@ -86,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<ul class="memenu skyblue">
 						<li class="active">
-							<a href="index.html">主页</a>
+							<a href="index.jsp">主页</a>
 						</li>
 						<li class="grid">
 							<a href="#">编程开发</a>
@@ -96,28 +99,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>编程语言</h4>
 										<ul>
 											<li>
-												<a href="products.html">Python</a>
+												<a href="products.jsp">Python</a>
 											</li>
 											<li>
-												<a href="products.html">PHP</a>
+												<a href="products.jsp">PHP</a>
 											</li>
 											<li>
-												<a href="products.html">Java</a>
+												<a href="products.jsp">Java</a>
 											</li>
 											<li>
-												<a href="products.html">C</a>
+												<a href="products.jsp">C</a>
 											</li>
 											<li>
-												<a href="products.html">C++</a>
+												<a href="products.jsp">C++</a>
 											</li>
 											<li>
-												<a href="products.html">C#</a>
+												<a href="products.jsp">C#</a>
 											</li>
 											<li>
-												<a href="products.html">Swift</a>
+												<a href="products.jsp">Swift</a>
 											</li>
 											<li>
-												<a href="products.html">Git</a>
+												<a href="products.jsp">Git</a>
 											</li>
 										</ul>
 									</div>
@@ -125,22 +128,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>网络营销</h4>
 										<ul>
 											<li>
-												<a href="products.html">新媒体营销</a>
+												<a href="products.jsp">新媒体营销</a>
 											</li>
 											<li>
-												<a href="products.html">SEO</a>
+												<a href="products.jsp">SEO</a>
 											</li>
 											<li>
-												<a href="products.html">SEM</a>
+												<a href="products.jsp">SEM</a>
 											</li>
 											<li>
-												<a href="products.html">销售技巧</a>
+												<a href="products.jsp">销售技巧</a>
 											</li>
 											<li>
-												<a href="products.html">大客户关系</a>
+												<a href="products.jsp">大客户关系</a>
 											</li>
 											<li>
-												<a href="products.html">网店运营</a>
+												<a href="products.jsp">网店运营</a>
 											</li>
 										</ul>
 									</div>
@@ -148,19 +151,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>办公软件</h4>
 										<ul>
 											<li>
-												<a href="products.html">PPT</a>
+												<a href="products.jsp">PPT</a>
 											</li>
 											<li>
-												<a href="products.html">Excel</a>
+												<a href="products.jsp">Excel</a>
 											</li>
 											<li>
-												<a href="products.html">Word</a>
+												<a href="products.jsp">Word</a>
 											</li>
 											<li>
-												<a href="products.html">Outlook</a>
+												<a href="products.jsp">Outlook</a>
 											</li>
 											<li>
-												<a href="products.html">Keynote</a>
+												<a href="products.jsp">Keynote</a>
 											</li>
 										</ul>
 									</div>
@@ -175,28 +178,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>编程语言</h4>
 										<ul>
 											<li>
-												<a href="products.html">Python</a>
+												<a href="products.jsp">Python</a>
 											</li>
 											<li>
-												<a href="products.html">PHP</a>
+												<a href="products.jsp">PHP</a>
 											</li>
 											<li>
-												<a href="products.html">Java</a>
+												<a href="products.jsp">Java</a>
 											</li>
 											<li>
-												<a href="products.html">C</a>
+												<a href="products.jsp">C</a>
 											</li>
 											<li>
-												<a href="products.html">C++</a>
+												<a href="products.jsp">C++</a>
 											</li>
 											<li>
-												<a href="products.html">C#</a>
+												<a href="products.jsp">C#</a>
 											</li>
 											<li>
-												<a href="products.html">Swift</a>
+												<a href="products.jsp">Swift</a>
 											</li>
 											<li>
-												<a href="products.html">Git</a>
+												<a href="products.jsp">Git</a>
 											</li>
 										</ul>
 									</div>
@@ -204,22 +207,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>网络营销</h4>
 										<ul>
 											<li>
-												<a href="products.html">新媒体营销</a>
+												<a href="products.jsp">新媒体营销</a>
 											</li>
 											<li>
-												<a href="products.html">SEO</a>
+												<a href="products.jsp">SEO</a>
 											</li>
 											<li>
-												<a href="products.html">SEM</a>
+												<a href="products.jsp">SEM</a>
 											</li>
 											<li>
-												<a href="products.html">销售技巧</a>
+												<a href="products.jsp">销售技巧</a>
 											</li>
 											<li>
-												<a href="products.html">大客户关系</a>
+												<a href="products.jsp">大客户关系</a>
 											</li>
 											<li>
-												<a href="products.html">网店运营</a>
+												<a href="products.jsp">网店运营</a>
 											</li>
 										</ul>
 									</div>
@@ -227,19 +230,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>办公软件</h4>
 										<ul>
 											<li>
-												<a href="products.html">PPT</a>
+												<a href="products.jsp">PPT</a>
 											</li>
 											<li>
-												<a href="products.html">Excel</a>
+												<a href="products.jsp">Excel</a>
 											</li>
 											<li>
-												<a href="products.html">Word</a>
+												<a href="products.jsp">Word</a>
 											</li>
 											<li>
-												<a href="products.html">Outlook</a>
+												<a href="products.jsp">Outlook</a>
 											</li>
 											<li>
-												<a href="products.html">Keynote</a>
+												<a href="products.jsp">Keynote</a>
 											</li>
 										</ul>
 									</div>
@@ -254,28 +257,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>编程语言</h4>
 										<ul>
 											<li>
-												<a href="products.html">Python</a>
+												<a href="products.jsp">Python</a>
 											</li>
 											<li>
-												<a href="products.html">PHP</a>
+												<a href="products.jsp">PHP</a>
 											</li>
 											<li>
-												<a href="products.html">Java</a>
+												<a href="products.jsp">Java</a>
 											</li>
 											<li>
-												<a href="products.html">C</a>
+												<a href="products.jsp">C</a>
 											</li>
 											<li>
-												<a href="products.html">C++</a>
+												<a href="products.jsp">C++</a>
 											</li>
 											<li>
-												<a href="products.html">C#</a>
+												<a href="products.jsp">C#</a>
 											</li>
 											<li>
-												<a href="products.html">Swift</a>
+												<a href="products.jsp">Swift</a>
 											</li>
 											<li>
-												<a href="products.html">Git</a>
+												<a href="products.jsp">Git</a>
 											</li>
 										</ul>
 									</div>
@@ -283,22 +286,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>网络营销</h4>
 										<ul>
 											<li>
-												<a href="products.html">新媒体营销</a>
+												<a href="products.jsp">新媒体营销</a>
 											</li>
 											<li>
-												<a href="products.html">SEO</a>
+												<a href="products.jsp">SEO</a>
 											</li>
 											<li>
-												<a href="products.html">SEM</a>
+												<a href="products.jsp">SEM</a>
 											</li>
 											<li>
-												<a href="products.html">销售技巧</a>
+												<a href="products.jsp">销售技巧</a>
 											</li>
 											<li>
-												<a href="products.html">大客户关系</a>
+												<a href="products.jsp">大客户关系</a>
 											</li>
 											<li>
-												<a href="products.html">网店运营</a>
+												<a href="products.jsp">网店运营</a>
 											</li>
 										</ul>
 									</div>
@@ -306,19 +309,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<h4>办公软件</h4>
 										<ul>
 											<li>
-												<a href="products.html">PPT</a>
+												<a href="products.jsp">PPT</a>
 											</li>
 											<li>
-												<a href="products.html">Excel</a>
+												<a href="products.jsp">Excel</a>
 											</li>
 											<li>
-												<a href="products.html">Word</a>
+												<a href="products.jsp">Word</a>
 											</li>
 											<li>
-												<a href="products.html">Outlook</a>
+												<a href="products.jsp">Outlook</a>
 											</li>
 											<li>
-												<a href="products.html">Keynote</a>
+												<a href="products.jsp">Keynote</a>
 											</li>
 										</ul>
 									</div>
@@ -326,7 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</li>
 						</ul>
-						</div>>
+						</div>
 				</div>
 			</div>
 			<!--bottom-header-->
@@ -500,7 +503,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a href="#">微专业</a>
 								</li>
 								<li>
-									<a href="contact.html">题库</a>
+									<a href="#">题库</a>
 								</li>
 								<li>
 									<a href="#">笔记</a>
@@ -520,7 +523,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h3>帮助中心</h3>
 							<ul>
 								<li>
-									<a href="account.html">随到随学课程</a>
+									<a href="#">随到随学课程</a>
 								</li>
 								<li>
 									<a href="#">定时开课课程</a>
@@ -552,7 +555,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h3>联系我们</h3>
 							<ul>
 								<li>
-									<a href="account.html">电子邮箱:123456789@qq.com</a>
+									<a href="#">电子邮箱:123456789@qq.com</a>
 								</li>
 								<li>
 									<a href="#">联系电话:010-12345678</a>
