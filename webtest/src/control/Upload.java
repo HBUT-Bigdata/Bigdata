@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -20,13 +23,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadBase.FileSizeLimitExceededException;
 import org.apache.commons.fileupload.ProgressListener;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
+import member.CLASS;
 /*
  * import org.apache.hadoop.conf.Configuration;
  * import org.apache.hadoop.fs.FSDataInputStream;
@@ -41,7 +45,9 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 public class Upload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private static long num;
+    private static String p_time;
+    private static String c_time;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -68,24 +74,51 @@ public class Upload extends HttpServlet {
     	return ret;
     }
     
+    private void dealtime(long year,long month,long day,long h,long m,long s)
+    {
+    	String ye=String.valueOf(year);
+    	String M,D,H,Mo,S;
+    	if (month<10)
+    		M="0"+String.valueOf(month);
+    	else M=String.valueOf(month);
+    	
+    	if (day<10)
+    		D="0"+String.valueOf(day);
+    	else D=String.valueOf(day);
+    	
+    	if (h<10) H="0"+String.valueOf(h);
+    	else H=String.valueOf(h);
+    	
+    	if (m<10) Mo="0"+String.valueOf(m);
+    	else Mo=String.valueOf(m);
+    	
+    	if (s<10) S="0"+String.valueOf(s);
+    	else S=String.valueOf(s);
+   
+    	p_time=ye+"-"+M+"-"+D;
+    	c_time=H+":"+Mo+":"+S;
+    }
+    
     private long getHash()
     {
     	final long mod=1000000007;
     	Calendar c= Calendar.getInstance();
     	long a[]=new long[6];
-    	a[0]=c.get(Calendar.YEAR)+1007;
-    	a[1]=c.get(Calendar.MONDAY)+1007;
-    	a[2]=c.get(Calendar.DATE)+1007;
-    	a[3]=c.get(Calendar.HOUR_OF_DAY)+1007;
-    	a[4]=c.get(Calendar.MINUTE)+1007;
-    	a[5]=c.get(Calendar.SECOND)+1007;
+    	a[0]=c.get(Calendar.YEAR);
+    	a[1]=c.get(Calendar.MONDAY);
+    	a[2]=c.get(Calendar.DATE);
+    	a[3]=c.get(Calendar.HOUR_OF_DAY);
+    	a[4]=c.get(Calendar.MINUTE);
+    	a[5]=c.get(Calendar.SECOND);
+    	dealtime(a[0], a[1], a[2], a[3], a[4], a[5]);
     	long ret=1;
-    	for (int i=0;i<6;i++) ret=(ret*a[i])%mod;
+    	for (int i=0;i<6;i++) ret=(ret*(a[i]+1007)   )%mod;
     	return Pow_mod(ret, 1007, mod);
     }
     
     private String MakeFileName(long ret,String filename)
     {
+    	num=ret;
     	String s=String.valueOf(ret);
     	return s+filename;
     }
@@ -137,10 +170,24 @@ public class Upload extends HttpServlet {
 	    // 定义允许上传的文件扩展名
 	    String Ext_Name = "in,out,gif,jpg,jpeg,png,bmp,swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb,doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2";
 
+        response.setContentType("text/html;charset=utf-8");  
+        request.setCharacterEncoding("utf-8");  
+
 	    /**
 	     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	     *      response)
 	     */
+	    HttpSession session=request.getSession();
+	    
+		String driverName="com.mysql.jdbc.Driver";
+		String dbURL="jdbc:mysql://localhost:3306/Bigdata";
+		String userName="root";
+		String userPwd="123456789";
+		Connection dbConn=null;
+		
+
+	    
+	    
 
 
 	        // 得到上传文件的保存目录，将上传文件存放在WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
@@ -164,6 +211,9 @@ public class Upload extends HttpServlet {
 	        // 消息提示
 	        String message = "";
 	        try {
+	        	
+				Class.forName(driverName);
+				dbConn=DriverManager.getConnection(dbURL,userName,userPwd);
 	            // 使用Apache文件上传组件处理文件上传步骤：
 	            // 1.创建一个DiskFileItemFactory工厂
 	            DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -197,6 +247,7 @@ public class Upload extends HttpServlet {
 	            // 设置上传文件总量的最大值，就是本次上传的所有文件的总和的最大值
 	            //upload.setSizeMax(1024 * 1024 * 10);// 10M
 
+	            String C_name=null;
 	            List items = upload.parseRequest(request);
 	            Iterator itr = items.iterator();
 	            while (itr.hasNext()) {
@@ -206,8 +257,7 @@ public class Upload extends HttpServlet {
 	                {
 	                	String blockName=item.getFieldName();
 	                	String value=item.getString("UTF-8");
-	                	
-	                	
+	                	if (blockName.equals("ClassName")) C_name=value;
 	                }
 	                else {
 	                    // 得到上传文件的文件名
@@ -268,13 +318,18 @@ public class Upload extends HttpServlet {
 	                    //删除临时文件
 	                    item.delete();
 	                    
+	                    String Rid=(String)session.getAttribute("Rid");
+	                    String Id=(String)session.getAttribute("Id");
+	                    String c_num=String.valueOf(num);
+	                    String g_num=(String) request.getSession().getAttribute("g_num");
+	                    CLASS cla=new CLASS(C_name,p_time,c_time,c_num,Rid,Id,g_num,g_num,false);
+	                    cla.InsertIntoDB(dbConn);
+	                    
+	                    
 	                    //Upload to hdfs
 	                    
 	  //                  uploadToHdfs(fileName);
-	                    
-	                    
-	                    
-	                    
+	                
 	                    //message = message + "文件：" + fileName + "，上传成功<br/>";
 	                    
 	                    
@@ -283,7 +338,6 @@ public class Upload extends HttpServlet {
 //	                    item.write(uploadedFile);   
 	                }
 	            }
-	            
 	        } catch (FileSizeLimitExceededException e) {
 	            message = message + "上传文件大小超过限制<br/>";
 	            e.printStackTrace();
@@ -291,10 +345,12 @@ public class Upload extends HttpServlet {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        } finally {
-	            request.setAttribute("message", message);
-	            request.getRequestDispatcher("/message.jsp").forward(request, response);
+	        	session.setAttribute("FFF","1");
+	            response.sendRedirect("SearchClass");
 	        }
-	    }
+	        return ;
+	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

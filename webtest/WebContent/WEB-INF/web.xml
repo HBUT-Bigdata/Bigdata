@@ -59,4 +59,14 @@
     <servlet-name>ReadInfo</servlet-name>
     <url-pattern>/ReadInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchClass</display-name>
+    <servlet-name>SearchClass</servlet-name>
+    <servlet-class>control.SearchClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchClass</servlet-name>
+    <url-pattern>/SearchClass</url-pattern>
+  </servlet-mapping>
 </web-app>

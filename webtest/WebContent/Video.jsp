@@ -77,7 +77,7 @@
 	<h1 class="margin-bottom-15">上传课件</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="/TomcatTest/UploadServlet" enctype="multipart/form-data" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="Upload" enctype="multipart/form-data" method="post">
 				<div class="form-inner">
 				
 					<div class="form-group">

@@ -2,7 +2,7 @@ package member;
 
 import java.sql.*;
 
-public class Class 
+public class CLASS 
 {
 	String name;
 	String p_time;
@@ -14,7 +14,7 @@ public class Class
 	String g_num;
 	boolean Flag;
 	
-	public Class(String c_name,String p_time,String c_time,String c_num,String tid,
+	public CLASS(String c_name,String p_time,String c_time,String c_num,String tid,
 				 String t_num,String gid,String g_num,boolean flag)
 	{
 		name=c_name;
@@ -59,8 +59,8 @@ public class Class
 		ps.setString(6, t_num);
 		ps.setString(7, gid);
 		ps.setString(8, g_num);
-		if (Flag) ps.setString(9,"true");
-		else ps.setString(9, "false");
+		if (Flag) ps.setString(9,"0");
+		else ps.setString(9, "1");
 		
 		int f=ps.executeUpdate();
 		return f==1;

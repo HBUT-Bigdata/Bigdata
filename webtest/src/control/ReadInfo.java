@@ -70,6 +70,7 @@ public class ReadInfo extends HttpServlet {
 				session.setAttribute("Id", rs.getString(7));
 				//session.setAttribute("handle", rs.getString(5));
 				session.setAttribute("pwd", rs.getString(6));
+				session.setAttribute("Rid", rs.getString(1));
 			
 			}
 			else if (role.equals("Teacher"))
@@ -83,6 +84,7 @@ public class ReadInfo extends HttpServlet {
 				session.setAttribute("Id", rs.getString(5));
 				//session.setAttribute("handle", rs.getString(6));
 				session.setAttribute("pwd", rs.getString(7));
+				session.setAttribute("Rid", rs.getString(1));
 			}
 			if (from.equals("login"))   response.sendRedirect("index.jsp");
 			else if (from.equals("person"))   response.sendRedirect("person.jsp");
