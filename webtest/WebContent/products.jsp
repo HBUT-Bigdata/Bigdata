@@ -356,7 +356,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="product-one">
 				<div class="col-md-4 product-left single-left" style="<%=a[1]!=null ? "":"display:none" %> " > 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[1]%>">
+						<a href="Toplayer?num=<%=a[1]%>">
 								<img src="images/course-1.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -368,7 +368,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[2]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[2]%>">
+						<a href="Toplayer?num=<%=a[2]%>">
 								<img src="images/course-2.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -380,7 +380,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[3]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[3]%>">
+						<a href="Toplayer?num=<%=a[3]%>">
 								<img src="images/course-3.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -395,7 +395,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left" style="<%=a[4]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[3]%>">
+						<a href="Toplayer?num=<%=a[4]%>">
 								<img src="images/course-4.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -407,7 +407,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[5]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[4]%>">
+						<a href="Toplayer?num=<%=a[5]%>">
 								<img src="images/course-5.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -419,7 +419,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[6]!=null ? "":"display:none" %> ">  
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[5]%>">
+						<a href="Toplayer?num=<%=a[6]%>">
 								<img src="images/course-6.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -434,7 +434,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-one">
 				<div class="col-md-4 product-left single-left" style="<%=a[7]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[6]%>">
+						<a href="Toplayer?num=<%=a[7]%>">
 								<img src="images/course-7.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -447,7 +447,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[8]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[7]%>">
+						<a href="Toplayer?num=<%=a[8]%>">
 								<img src="images/course-8.jpg" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>
@@ -460,7 +460,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[9]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
-						<a href="player.jsp?num=<%=a[8]%>">
+						<a href="Toplayer?num=<%=a[9]%>">
 								<img src="images/course-9.png" alt="" />
 								<div class="mask mask1">
 									<span>点击进入</span>

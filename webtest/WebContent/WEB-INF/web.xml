@@ -69,4 +69,14 @@
     <servlet-name>SearchClass</servlet-name>
     <url-pattern>/SearchClass</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Toplayer</display-name>
+    <servlet-name>Toplayer</servlet-name>
+    <servlet-class>control.Toplayer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Toplayer</servlet-name>
+    <url-pattern>/Toplayer</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +11,12 @@
 	<link rel="stylesheet" href="css/5.css">
 </head>
 <body>
+<%
+	String path=(String)session.getAttribute("Path");
+	System.out.println(path);
+	session.removeAttribute("Path");
+%>
+
 	<div class="htmleaf-container">
 		
 		<div class="main">
@@ -19,7 +24,7 @@
 
 		    <div id="image_container" class="container">
 		   
-				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Lightbox-Dialog/201704114449.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="SearchClass" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
 		    </div>
 
 		    <div id="video_container" class="container">
@@ -27,7 +32,7 @@
 		      <div style="margin-top:20px ;"> 
 		      
 		      
-		        <div class="vid htmlvid" style="background-image:url(img/vid_towers.jpg)" vidSrc="videos/towers.mp4"></div>
+		        <div class="vid htmlvid" style="background-image:url(images/shoes.png)" vidSrc="<%=path%>"></div>
 		        
 		        
 		      </div>
@@ -49,7 +54,7 @@
 		
 	</div>
 	
-	<script src="dist/BigPicture.js"></script>
+	<script src="js/BigPicture.js"></script>
 	<script>
 	  (function() {
 

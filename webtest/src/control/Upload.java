@@ -168,7 +168,7 @@ public class Upload extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    // 定义允许上传的文件扩展名
-	    String Ext_Name = "in,out,gif,jpg,jpeg,png,bmp,swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb,doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2";
+	    String Ext_Name = "in,out,gif,jpg,jpeg,png,bmp,swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb,doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2,mp4";
 
         response.setContentType("text/html;charset=utf-8");  
         request.setCharacterEncoding("utf-8");  
@@ -191,8 +191,8 @@ public class Upload extends HttpServlet {
 
 
 	        // 得到上传文件的保存目录，将上传文件存放在WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
-	        //String savePath = this.getServletContext().getRealPath("WEB-INF/upload");
-	        String savePath = "/home/ruinan/BigdataUpload";
+	        String savePath = this.getServletContext().getRealPath("WEB-INF/upload");
+	        //String savePath = "/home/ruinan/BigdataUpload";
 	        File saveFileDir = new File(savePath);
 	        if (!saveFileDir.exists()) {
 	            // 创建临时目录
@@ -297,7 +297,7 @@ public class Upload extends HttpServlet {
 	                    
 	                    // 得到存文件的文件名
 	                    long hashresult=getHash();
-	                    String saveFileName = MakeFileName(hashresult,fileName);
+	                    String saveFileName = MakeFileName(hashresult,C_name+"."+fileExt);
 	                    
 	                    
 	                    //保存文件方法一// 获取item中的上传文件的输入流
@@ -322,7 +322,7 @@ public class Upload extends HttpServlet {
 	                    String Id=(String)session.getAttribute("Id");
 	                    String c_num=String.valueOf(num);
 	                    String g_num=(String) request.getSession().getAttribute("g_num");
-	                    CLASS cla=new CLASS(C_name,p_time,c_time,c_num,Rid,Id,g_num,g_num,false);
+	                    CLASS cla=new CLASS(C_name+"."+fileExt,p_time,c_time,c_num,Rid,Id,g_num,g_num,false);
 	                    cla.InsertIntoDB(dbConn);
 	                    
 	                    
