@@ -92,7 +92,8 @@ public class DealLogin extends HttpServlet {
 				  request.getRequestDispatcher("ReadInfo").forward(request, response);			  
 			  }
 			  //login failed
-			  //else  response.sendRedirect("www.baidu.com");
+			  else request.getRequestDispatcher("login.jsp").forward(request, response);		  
+			  
 			  return ;
 		  }
 		  catch(Exception e)
