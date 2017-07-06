@@ -53,19 +53,16 @@ public class SearchClass extends HttpServlet {
 		PreparedStatement ps;
 		ResultSet rs;
 		
-		String num;
-		String FFF=(String)request.getSession().getAttribute("FFF");
-		if (FFF!=null && FFF.equals("1"))
-		{
-			num=(String) request.getSession().getAttribute("g_num");
-			request.getSession().removeAttribute("FFF");
-		}
-		else  
+		String num=request.getParameter("num");
+		//String FFF=(String)request.getSession().getAttribute("FFF");
+		
+		if (num==null || num.isEmpty()) num=(String) request.getSession().getAttribute("g_num");
+		else 
 		{
 			num=request.getParameter("num");
 			request.getSession().setAttribute("g_num",num);
-		}
-		
+			
+		}		
 		try 
 		{
 			Class.forName(driverName);

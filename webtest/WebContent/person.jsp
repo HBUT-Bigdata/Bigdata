@@ -32,7 +32,8 @@
 %>
 
 	<div class="container">
-		<div class="col-md-12">			
+		<div class="col-md-12">		
+		<h1 class="margin-bottom-15">Personal Info</h1>	
 			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="ChangeInfo" method="post">
 				<div class="form-inner">
 					<div class="form-group">

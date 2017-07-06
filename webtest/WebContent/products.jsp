@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="person.jsp" class="templatemo-create-new">Person<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
 						<div style="float:left;font-size: 20px; margin-left: -5px;margin-top: -35px;">
-						<a href="register_chooser.jsp" class="templatemo-create-new">Register<i class="fa fa-arrow-circle-o-right"></i></a>
+						<a href="register_choose.jsp" class="templatemo-create-new">Register<i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
 						<div style="float:left;font-size: 20px; margin-left: 100px;margin-top: -35px;">
 						<a href="login.jsp" class="templatemo-create-new">LoginOut<i class="fa fa-arrow-circle-o-right"></i></a>

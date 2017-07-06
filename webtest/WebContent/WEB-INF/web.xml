@@ -79,4 +79,14 @@
     <servlet-name>Toplayer</servlet-name>
     <url-pattern>/Toplayer</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetVideoStream</display-name>
+    <servlet-name>GetVideoStream</servlet-name>
+    <servlet-class>control.GetVideoStream</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetVideoStream</servlet-name>
+    <url-pattern>/GetVideoStream</url-pattern>
+  </servlet-mapping>
 </web-app>

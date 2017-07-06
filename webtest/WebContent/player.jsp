@@ -12,9 +12,7 @@
 </head>
 <body>
 <%
-	String path=(String)session.getAttribute("Path");
-	System.out.println(path);
-	session.removeAttribute("Path");
+	String path=request.getParameter("Path");
 %>
 
 	<div class="htmleaf-container">
@@ -32,7 +30,7 @@
 		      <div style="margin-top:20px ;"> 
 		      
 		      
-		        <div class="vid htmlvid" style="background-image:url(images/shoes.png)" vidSrc="<%=path%>"></div>
+		        <div class="vid htmlvid" style="background-image:url(images/shoes.png)" vidSrc="<%=request.getContextPath()%>/GetVideoStream?path=<%=path%>"></div>
 		        
 		        
 		      </div>

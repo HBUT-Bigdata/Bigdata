@@ -163,8 +163,8 @@ img {
 }
 
 .vid {
-  height: 700px;
-  width:1400px;
+  height: 600px;
+  width:1000px;
   position: relative;
   background-position: center center;
   background-size: cover;

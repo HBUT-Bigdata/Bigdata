@@ -54,9 +54,7 @@ public class Toplayer extends HttpServlet {
     	   ResultSet rs=ps.executeQuery();
     	   rs.next();
     	   String c_name=rs.getString(2);
-    	   HttpSession session=request.getSession();
-    	   session.setAttribute("Path",this.getServletContext().getRealPath("WEB-INF/upload/")+c_num+c_name);
-    	   response.sendRedirect("player.jsp");
+    	   response.sendRedirect("player.jsp?Path="+c_num+c_name);
     	   return ;
     	   
         }

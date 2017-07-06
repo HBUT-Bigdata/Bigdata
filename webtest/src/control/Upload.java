@@ -116,11 +116,11 @@ public class Upload extends HttpServlet {
     	return Pow_mod(ret, 1007, mod);
     }
     
-    private String MakeFileName(long ret,String filename)
+    private String MakeFileName(long ret,String ext)
     {
     	num=ret;
     	String s=String.valueOf(ret);
-    	return s+filename;
+    	return s+ext;
     }
   /*  
     public static void uploadToHdfs(String filename) throws FileNotFoundException, IOException {
@@ -345,7 +345,7 @@ public class Upload extends HttpServlet {
 	            // TODO Auto-generated catch block
 	            e.printStackTrace();
 	        } finally {
-	        	session.setAttribute("FFF","1");
+	        	//session.setAttribute("FFF","1");
 	            response.sendRedirect("SearchClass");
 	        }
 	        return ;
