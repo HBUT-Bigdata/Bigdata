@@ -43,12 +43,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	String a[]=new String[100];
 	int i=1;
 	String ret=(String)session.getAttribute(String.valueOf(i));	
+	String role=(String) request.getSession().getAttribute("role");  
 	if (ret!=null && !ret.isEmpty())
 	{
 		do
 		{
 			System.out.println(ret);
 			a[i]=ret;
+			
+			request.getSession().removeAttribute(String.valueOf(i));
+			
 			i++;
 			ret=(String) session.getAttribute(String.valueOf(i));	
 		} while (ret!=null && !ret.isEmpty()) ;
@@ -329,7 +333,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</li>
 					<li class="grid">
-					<a href="Video.jsp">上传视频</a>
+					<a href="Video.jsp" style="<%=role.equals("Student") ? "display:none":"" %>" >上传视频</a>
 					</li>
 				</ul>
 				</div>
@@ -345,7 +349,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-main">
 				<div class="col-md-9 p-left">
 				<div class="product-one">
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[1]!=null ? "":"display:none" %> " > 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[1]%>">
 								<img src="images/course-1.jpg" alt="" />
@@ -357,7 +361,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[2]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[2]%>">
 								<img src="images/course-2.jpg" alt="" />
@@ -369,7 +373,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[3]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[3]%>">
 								<img src="images/course-3.jpg" alt="" />
@@ -384,7 +388,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 			<div class="product-one">
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[4]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[3]%>">
 								<img src="images/course-4.png" alt="" />
@@ -396,7 +400,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[5]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[4]%>">
 								<img src="images/course-5.jpg" alt="" />
@@ -408,7 +412,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[6]!=null ? "":"display:none" %> ">  
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[5]%>">
 								<img src="images/course-6.jpg" alt="" />
@@ -423,7 +427,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 			</div>
 			<div class="product-one">
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[7]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[6]%>">
 								<img src="images/course-7.png" alt="" />
@@ -436,7 +440,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[8]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[7]%>">
 								<img src="images/course-8.jpg" alt="" />
@@ -449,7 +453,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 					</div>
 				</div>
-				<div class="col-md-4 product-left single-left"> 
+				<div class="col-md-4 product-left single-left" style="<%=a[9]!=null ? "":"display:none" %> "> 
 					<div class="p-one simpleCart_shelfItem">
 						<a href="player.jsp?num=<%=a[8]%>">
 								<img src="images/course-9.png" alt="" />

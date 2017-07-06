@@ -63,10 +63,9 @@ public class SearchClass extends HttpServlet {
 		else  
 		{
 			num=request.getParameter("num");
-			request.getSession().setAttribute("FFF",num);
+			request.getSession().setAttribute("g_num",num);
 		}
 		
-		request.getSession().setAttribute("g_num", num);
 		try 
 		{
 			Class.forName(driverName);
