@@ -40,18 +40,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body> 
 
 <%
-	String a[]=new String[100];
+	String a[]=new String[10],tn[]=new String[10],cn[]=new String[10];
 	int i=1;
 	String ret=(String)session.getAttribute(String.valueOf(i));	
-	String role=(String) request.getSession().getAttribute("role");  
+	String role=(String) request.getSession().getAttribute("role");   
+	
 	if (ret!=null && !ret.isEmpty())
 	{
 		do
 		{
-			System.out.println(ret);
+			//System.out.println(ret);
 			a[i]=ret;
+			tn[i]=(String)request.getSession().getAttribute("tn"+String.valueOf(i));
+			cn[i]=(String)request.getSession().getAttribute("cn"+String.valueOf(i));
 			
 			request.getSession().removeAttribute(String.valueOf(i));
+			request.getSession().removeAttribute("tn"+String.valueOf(i));
+			request.getSession().removeAttribute("cn"+String.valueOf(i));
 			
 			i++;
 			ret=(String) session.getAttribute(String.valueOf(i));	
@@ -357,8 +362,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>从0开始进阶数据分析大师</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[1] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[1] %></span></a></p>
 					</div>
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[2]!=null ? "":"display:none" %> "> 
@@ -369,8 +374,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>IT入门精选</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[2] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[2] %></span></a></p>
 					</div>
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[3]!=null ? "":"display:none" %> "> 
@@ -381,8 +386,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>计算机入门课程</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[3] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[3] %></span></a></p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -396,8 +401,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>从0进阶互联网数据分析师</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[4] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[4] %></span></a></p>
 					</div>
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[5]!=null ? "":"display:none" %> "> 
@@ -408,8 +413,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>Python Web开发</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[5] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[5] %></span></a></p>
 					</div>
 				</div>
 				<div class="col-md-4 product-left single-left" style="<%=a[6]!=null ? "":"display:none" %> ">  
@@ -420,8 +425,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>fabric实战</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[6] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[6] %></span></a></p>
 					</div>
 				</div>
 			<div class="clearfix"> </div>
@@ -435,8 +440,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>Python Django</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[7] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[7] %></span></a></p>
 						
 					</div>
 				</div>
@@ -448,8 +453,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>Python数据分析机器学习</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[8] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[8] %></span></a></p>
 						
 					</div>
 				</div>
@@ -461,8 +466,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>点击进入</span>
 								</div>
 							</a>
-						<h4>Python机器学习实战</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">主讲人:老王</span></a></p>
+						<h4><%=cn[9] %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price"><%=tn[9] %></span></a></p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

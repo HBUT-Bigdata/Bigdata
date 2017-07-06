@@ -74,12 +74,25 @@ public class SearchClass extends HttpServlet {
 			ps=dbConn.prepareStatement("select * from class where g_num='"+num+"';");
 			rs=ps.executeQuery();
 			
+			PreparedStatement PS=dbConn.prepareStatement("select * from teacher where tid=? ;");
+			ResultSet RS;
+			
 			int i=0; 
 			HttpSession session=request.getSession();
 			while (rs.next())
 			{
 				i++;
-				session.setAttribute(String.valueOf(i), rs.getString(5));
+				String c_num=rs.getString(5);
+				int tid=rs.getInt(6);
+				PS.setInt(1, tid);
+				RS=PS.executeQuery();
+				RS.next();
+				String t_name=RS.getString(2);
+				String c_name=rs.getString(2);
+				
+				session.setAttribute(String.valueOf(i), c_num);
+				session.setAttribute("tn"+String.valueOf(i), t_name);
+				session.setAttribute("cn"+String.valueOf(i) ,c_name);
 			}
 			response.sendRedirect("products.jsp");
 			return ;
