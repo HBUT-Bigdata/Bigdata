@@ -129,31 +129,32 @@ a.simpleCart_empty {
 /*--end-bottom-header--*/
 /*--banner-starts--*/
 .banner-1{
-	background:url(../images/banner.jpg) no-repeat center;
+	background:url(../images/banner-11.jpg) no-repeat center;
 	min-height:700px;
 	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	-ms-background-size:cover;
+	-webkit-background-size:1260px 700px;
+	-moz-background-size:100% 100%;
+	-o-background-size:100% 100%;
+	-ms-background-size:100% 100%;
 }
 .banner-2{
-	background:url(../images/banner-3.jpg) no-repeat;
+	background:url(../images/banner-13.jpg) no-repeat center;
 	min-height:700px;
 	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	-ms-background-size:cover;
+	-webkit-background-size:1260px 700px;
+	-moz-background-size:100% 100%;
+	-o-background-size:100% 100%;
+	-ms-background-size:100% 100%;
+
 }
 .banner-3{
-	background:url(../images/banner-2.jpg) no-repeat center;
+	background:url(../images/banner-4.jpg) no-repeat center;
 	min-height:700px;
 	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	-ms-background-size:cover;
+	-webkit-background-size:1260px 700px;
+	-moz-background-size:100% 100%;
+	-o-background-size:100% 100%;
+	-ms-background-size:100% 100%;
 }
 /*------------------ Slider Part starts Here----------*/
 .callbacks_container {
